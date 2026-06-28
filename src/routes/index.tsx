@@ -15,6 +15,7 @@ import {
   Cpu,
   KeyRound,
   FileCheck2,
+  Star,
 } from "lucide-react";
 import heroTrucker from "@/assets/hero-trucker.jpg";
 import trucksFleet from "@/assets/trucks-fleet.jpg";
