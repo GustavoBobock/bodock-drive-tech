@@ -24,6 +24,9 @@ import techService from "@/assets/tech-service.jpg";
 const WHATSAPP_URL =
   "https://wa.me/5537000000000?text=Ol%C3%A1!%20Quero%20informa%C3%A7%C3%B5es%20sobre%20o%20Certificado%20Digital.";
 
+const WHATSAPP_LACERDA_REIS_URL =
+  "https://wa.me/5537000000000?text=Ol%C3%A1!%20Vim%20pela%20indica%C3%A7%C3%A3o%20da%20Contabilidade%20Lacerda%20Reis%20e%20quero%20informa%C3%A7%C3%B5es%20sobre%20o%20Certificado%20Digital.";
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
