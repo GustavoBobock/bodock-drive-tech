@@ -15,6 +15,8 @@ import {
   KeyRound,
   FileCheck2,
   ShieldCheck,
+  Building2,
+  Zap,
 } from "lucide-react";
 import heroTrucker from "@/assets/hero-trucker.jpg";
 import trucksFleet from "@/assets/trucks-fleet.jpg";
@@ -213,6 +215,82 @@ function Landing() {
               {t}
             </span>
           ))}
+        </div>
+      </section>
+
+      {/* CAMINHONEIROS */}
+      <section className="overflow-hidden bg-[#F8F9FA] py-20 md:py-28">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="grid gap-12 md:grid-cols-2 md:items-center">
+
+            {/* Texto */}
+            <div className="order-2 md:order-1">
+              <div className="inline-flex items-center gap-2 rounded-full bg-secondary/15 px-3 py-1.5 text-xs font-semibold text-secondary">
+                <Truck className="size-3.5" /> Caminhoneiros da Região
+              </div>
+              <h2 className="mt-4 font-display text-3xl font-bold text-balance sm:text-4xl">
+                Feito para quem vive na estrada.
+              </h2>
+              <p className="mt-4 leading-relaxed text-muted-foreground">
+                Atendemos diariamente motoristas que transportam{" "}
+                <strong className="text-foreground">cimento, cal, calcário e minério</strong>{" "}
+                em Arcos/MG e toda a região.
+              </p>
+              <p className="mt-3 leading-relaxed text-muted-foreground">
+                Sabemos que um caminhão parado por falta de Certificado Digital pode
+                significar <strong className="text-foreground">perder um frete</strong>. Por
+                isso oferecemos atendimento rápido, direto e sem burocracia.
+              </p>
+
+              <div className="mt-8 grid grid-cols-2 gap-3">
+                {truckerCards.map((c) => (
+                  <div
+                    key={c.label}
+                    className="flex items-start gap-3 rounded-xl border border-border bg-white p-4 shadow-sm transition-shadow hover:shadow-md"
+                  >
+                    <div className="mt-0.5 grid size-8 shrink-0 place-items-center rounded-lg bg-secondary/15 text-secondary">
+                      <c.icon className="size-4" />
+                    </div>
+                    <span className="text-sm font-medium leading-snug text-foreground">
+                      {c.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-8">
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-whatsapp inline-flex items-center gap-2 rounded-full px-6 py-3.5 font-semibold shadow-soft"
+                >
+                  <MessageCircle className="size-5" /> Quero meu Certificado
+                </a>
+              </div>
+            </div>
+
+            {/* Imagem */}
+            <div className="order-1 md:order-2 relative">
+              <div className="absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-br from-secondary/10 to-primary/10 blur-2xl" />
+              <div className="overflow-hidden rounded-2xl shadow-elevated ring-1 ring-black/5">
+                <img
+                  src={trucksFleet}
+                  alt="Frota de bitrucks transportando calcário em pedreira de Arcos/MG"
+                  loading="lazy"
+                  width={1536}
+                  height={768}
+                  className="truck-drift w-full object-cover"
+                />
+              </div>
+              <div className="absolute bottom-4 left-4 right-4 rounded-xl bg-black/55 px-4 py-2.5 backdrop-blur-sm">
+                <p className="text-center text-xs font-medium text-white/90">
+                  📍 Bitrucks na região de Arcos/MG — exatamente o público que atendemos
+                </p>
+              </div>
+            </div>
+
+          </div>
         </div>
       </section>
 
@@ -622,6 +700,13 @@ function ServiceCard({
     </div>
   );
 }
+
+const truckerCards = [
+  { icon: Building2, label: "Especialistas na região das mineradoras" },
+  { icon: Truck,     label: "Atendimento para caminhoneiros" },
+  { icon: MapPin,    label: "Arcos/MG e cidades vizinhas" },
+  { icon: Zap,       label: "Emissão rápida para você continuar trabalhando" },
+];
 
 const services = [
   { icon: Monitor, title: "Manutenção de Computadores", desc: "Diagnóstico honesto e conserto sem dor de cabeça." },

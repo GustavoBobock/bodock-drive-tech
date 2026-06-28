@@ -111,6 +111,18 @@
   text-wrap: balance;
 }
 
+/* ── Truck drift (seção caminhoneiros) ── */
+
+.truck-drift {
+  transform: scale(1.04) translateX(0);
+  animation: truck-drift 12s ease-in-out infinite;
+}
+
+@keyframes truck-drift {
+  0%, 100% { transform: scale(1.04) translateX(0px); }
+  50%       { transform: scale(1.04) translateX(-7px); }
+}
+
 /* ── Floating contact animations ── */
 
 .avatar-spin-ring {
