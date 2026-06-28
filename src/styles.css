@@ -110,3 +110,54 @@
 @utility text-balance {
   text-wrap: balance;
 }
+
+/* ── Floating contact animations ── */
+
+.avatar-spin-ring {
+  background: conic-gradient(
+    from 0deg,
+    #25d366 0%,
+    #1565c0 35%,
+    #075e54 65%,
+    #25d366 100%
+  );
+  animation: spin-ring 3s linear infinite;
+}
+
+@keyframes spin-ring {
+  to { transform: rotate(360deg); }
+}
+
+.avatar-ping-1 {
+  background-color: oklch(0.72 0.18 148);
+  animation: avatar-ping 2.8s ease-out infinite;
+}
+
+.avatar-ping-2 {
+  background-color: oklch(0.72 0.18 148);
+  animation: avatar-ping 2.8s ease-out 1.4s infinite;
+}
+
+@keyframes avatar-ping {
+  0%   { transform: scale(1);   opacity: 0.45; }
+  80%, 100% { transform: scale(2);   opacity: 0; }
+}
+
+.wapp-pulse-btn {
+  animation: wapp-pulse 2s ease-in-out infinite;
+}
+
+@keyframes wapp-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow:
+      0 8px 24px -6px oklch(0.60 0.18 148 / 70%),
+      0 0 0 0 oklch(0.72 0.18 148 / 55%);
+  }
+  50% {
+    transform: scale(1.08);
+    box-shadow:
+      0 12px 32px -6px oklch(0.60 0.18 148 / 80%),
+      0 0 0 18px oklch(0.72 0.18 148 / 0%);
+  }
+}

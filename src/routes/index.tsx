@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
-  ShieldCheck,
   Truck,
   Monitor,
   Laptop,
@@ -15,11 +14,16 @@ import {
   Cpu,
   KeyRound,
   FileCheck2,
-  Star,
+  ShieldCheck,
 } from "lucide-react";
 import heroTrucker from "@/assets/hero-trucker.jpg";
 import trucksFleet from "@/assets/trucks-fleet.jpg";
 import techService from "@/assets/tech-service.jpg";
+import logoBodock from "@/assets/logo-tipo-bodock-png-semfundo.png";
+import logoLacerdaReis from "@/assets/logo-lacerdaresis-parceiro-semfundo.png";
+import logoV9 from "@/assets/logo-v9-parceiro.png";
+import gustavoContato from "@/assets/gustavo-contato.png";
+import iconeWhatsapp from "@/assets/icone-whatsapp (3).png";
 
 const WHATSAPP_URL =
   "https://wa.me/5537000000000?text=Ol%C3%A1!%20Quero%20informa%C3%A7%C3%B5es%20sobre%20o%20Certificado%20Digital.";
@@ -83,14 +87,12 @@ function Landing() {
       {/* NAV */}
       <header className="absolute top-0 z-20 w-full">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-          <div className="flex items-center gap-2 text-white">
-            <div className="grid size-10 place-items-center rounded-xl bg-white/15 backdrop-blur ring-1 ring-white/20">
-              <ShieldCheck className="size-5" />
-            </div>
-            <div className="leading-tight">
-              <div className="font-display text-lg font-bold">Bodock Planet</div>
-              <div className="text-[11px] uppercase tracking-wider text-white/70">Tecnologia</div>
-            </div>
+          <div className="flex items-center">
+            <img
+              src={logoBodock}
+              alt="Bodock Planet Tecnologia"
+              className="h-14 w-auto drop-shadow-lg"
+            />
           </div>
           <a
             href={WHATSAPP_URL}
@@ -216,27 +218,41 @@ function Landing() {
       </section>
 
       {/* INDICAÇÃO LACERDA REIS */}
-      <section className="bg-secondary py-10">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-6 md:flex-row">
-          <div className="flex items-center gap-4 text-secondary-foreground">
-            <div className="grid size-12 place-items-center rounded-full bg-white/20">
-              <Star className="size-6" />
-            </div>
-            <div>
-              <div className="font-display text-lg font-bold">Cliente da Contabilidade Lacerda Reis?</div>
-              <div className="text-sm opacity-90">
-                Clique no botão ao lado — já saberemos que você veio de confiança.
+      <section className="bg-secondary py-12">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="flex flex-col items-center gap-8 md:flex-row md:justify-between">
+            {/* Logo + texto */}
+            <div className="flex flex-col items-center gap-5 md:flex-row md:items-center">
+              <div className="flex size-28 shrink-0 items-center justify-center rounded-2xl bg-white/20 p-3 ring-2 ring-white/30 backdrop-blur">
+                <img
+                  src={logoLacerdaReis}
+                  alt="Contabilidade Lacerda Reis"
+                  className="h-full w-full object-contain"
+                />
+              </div>
+              <div className="text-center text-secondary-foreground md:text-left">
+                <div className="text-xs font-semibold uppercase tracking-widest opacity-75">
+                  Parceiro Oficial
+                </div>
+                <div className="mt-1 font-display text-2xl font-bold leading-tight">
+                  Contabilidade Lacerda Reis
+                </div>
+                <div className="mt-1.5 max-w-sm text-sm opacity-85">
+                  Cliente da Lacerda Reis? Clique no botão — já saberemos que você veio de confiança e o atendimento será ainda mais ágil.
+                </div>
               </div>
             </div>
+
+            {/* Botão */}
+            <a
+              href={WHATSAPP_LACERDA_REIS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex shrink-0 items-center gap-2.5 rounded-full bg-white px-7 py-4 font-semibold text-secondary shadow-elevated transition-all hover:scale-[1.03] active:scale-[0.99]"
+            >
+              <MessageCircle className="size-5" /> Sou cliente Lacerda Reis
+            </a>
           </div>
-          <a
-            href={WHATSAPP_LACERDA_REIS_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 font-semibold text-secondary shadow-soft transition-all hover:scale-[1.02] active:scale-[0.99]"
-          >
-            <MessageCircle className="size-5" /> Sou cliente Lacerda Reis
-          </a>
         </div>
       </section>
 
@@ -467,10 +483,12 @@ function Landing() {
         <div className="mx-auto max-w-7xl px-6 py-12">
           <div className="flex flex-col items-center justify-between gap-6 md:flex-row md:items-start">
             <div>
-              <div className="flex items-center gap-2">
-                <div className="grid size-10 place-items-center rounded-xl bg-primary text-primary-foreground">
-                  <ShieldCheck className="size-5" />
-                </div>
+              <div className="flex items-center gap-3">
+                <img
+                  src={logoBodock}
+                  alt="Bodock Planet Tecnologia"
+                  className="h-16 w-auto"
+                />
                 <div>
                   <div className="font-display font-bold">Bodock Planet Tecnologia</div>
                   <div className="text-xs text-muted-foreground">
@@ -478,8 +496,10 @@ function Landing() {
                   </div>
                 </div>
               </div>
-              <div className="mt-3 text-xs text-muted-foreground">
-                Parceiro Oficial da Contabilidade Lacerda Reis · Arcos / MG
+              <div className="mt-3 space-y-0.5 text-xs text-muted-foreground">
+                <div>Parceiro Oficial da Contabilidade Lacerda Reis · Arcos / MG</div>
+                <div>Av. Governador Valadares, nº 171, sala 03 — Galeria Arcos Shopping, Centro · Arcos/MG</div>
+                <div>CNPJ: 43.834.782/0001-77</div>
               </div>
             </div>
 
@@ -492,22 +512,77 @@ function Landing() {
               <MessageCircle className="size-4" /> Fale no WhatsApp
             </a>
           </div>
-          <div className="mt-8 border-t pt-6 text-center text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Bodock Planet Tecnologia. Todos os direitos reservados.
+
+          {/* Parceiros */}
+          <div className="mt-8 border-t pt-6">
+            <div className="flex flex-col items-center gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <div className="text-center text-xs text-muted-foreground sm:text-left">
+                © {new Date().getFullYear()} Bodock Planet Tecnologia. Todos os direitos reservados.
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-xs text-muted-foreground">Parceiro Oficial</span>
+                <div className="rounded-lg bg-white px-3 py-1.5 ring-1 ring-border">
+                  <img
+                    src={logoV9}
+                    alt="V9 Soluções Tecnológicas"
+                    className="h-8 w-auto object-contain"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </footer>
 
-      {/* FLOATING WHATSAPP */}
-      <a
-        href={WHATSAPP_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Falar no WhatsApp"
-        className="btn-whatsapp fixed bottom-5 right-5 z-30 grid size-14 place-items-center rounded-full shadow-elevated ring-4 ring-white/60 transition-transform hover:scale-110"
-      >
-        <MessageCircle className="size-7" />
-      </a>
+      {/* FLOATING CONTACT */}
+      <div className="fixed bottom-5 right-5 z-30 flex flex-col items-center gap-2.5">
+        {/* Avatar com anel girando */}
+        <a
+          href={WHATSAPP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Falar com Gustavo no WhatsApp"
+          className="group"
+        >
+          <div className="relative size-20">
+            {/* Ondas sonar */}
+            <span className="avatar-ping-1 absolute inset-0 rounded-full" />
+            <span className="avatar-ping-2 absolute inset-0 rounded-full" />
+            {/* Anel gradiente girando */}
+            <span className="avatar-spin-ring absolute inset-0 rounded-full" />
+            {/* Separador branco */}
+            <span className="absolute inset-[3px] rounded-full bg-white" />
+            {/* Foto */}
+            <span className="absolute inset-[5px] rounded-full overflow-hidden shadow-md">
+              <img
+                src={gustavoContato}
+                alt="Gustavo — Bodock Planet"
+                className="size-full object-cover transition-transform duration-300 group-hover:scale-105"
+                style={{ objectPosition: "center 12%" }}
+              />
+            </span>
+            {/* Ponto online */}
+            <span className="absolute bottom-1 right-1 z-10 size-3.5 rounded-full bg-green-400 ring-2 ring-white" />
+          </div>
+        </a>
+
+        {/* Label online */}
+        <div className="flex items-center gap-1.5 rounded-full bg-white px-3 py-1 text-xs font-semibold text-gray-700 shadow-md ring-1 ring-black/5">
+          <span className="size-1.5 animate-pulse rounded-full bg-green-400" />
+          Fale comigo!
+        </div>
+
+        {/* Botão WhatsApp pulsando */}
+        <a
+          href={WHATSAPP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Falar no WhatsApp"
+          className="wapp-pulse-btn block size-14 overflow-hidden rounded-full shadow-elevated"
+        >
+          <img src={iconeWhatsapp} alt="WhatsApp" className="size-full object-cover" />
+        </a>
+      </div>
     </div>
   );
 }
