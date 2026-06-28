@@ -15,6 +15,7 @@ import {
   Cpu,
   KeyRound,
   FileCheck2,
+  Star,
 } from "lucide-react";
 import heroTrucker from "@/assets/hero-trucker.jpg";
 import trucksFleet from "@/assets/trucks-fleet.jpg";
@@ -22,6 +23,9 @@ import techService from "@/assets/tech-service.jpg";
 
 const WHATSAPP_URL =
   "https://wa.me/5537000000000?text=Ol%C3%A1!%20Quero%20informa%C3%A7%C3%B5es%20sobre%20o%20Certificado%20Digital.";
+
+const WHATSAPP_LACERDA_REIS_URL =
+  "https://wa.me/5537000000000?text=Ol%C3%A1!%20Vim%20pela%20indica%C3%A7%C3%A3o%20da%20Contabilidade%20Lacerda%20Reis%20e%20quero%20informa%C3%A7%C3%B5es%20sobre%20o%20Certificado%20Digital.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -208,6 +212,31 @@ function Landing() {
               {t}
             </span>
           ))}
+        </div>
+      </section>
+
+      {/* INDICAÇÃO LACERDA REIS */}
+      <section className="bg-secondary py-10">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-6 md:flex-row">
+          <div className="flex items-center gap-4 text-secondary-foreground">
+            <div className="grid size-12 place-items-center rounded-full bg-white/20">
+              <Star className="size-6" />
+            </div>
+            <div>
+              <div className="font-display text-lg font-bold">Cliente da Contabilidade Lacerda Reis?</div>
+              <div className="text-sm opacity-90">
+                Clique no botão ao lado — já saberemos que você veio de confiança.
+              </div>
+            </div>
+          </div>
+          <a
+            href={WHATSAPP_LACERDA_REIS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 font-semibold text-secondary shadow-soft transition-all hover:scale-[1.02] active:scale-[0.99]"
+          >
+            <MessageCircle className="size-5" /> Sou cliente Lacerda Reis
+          </a>
         </div>
       </section>
 
