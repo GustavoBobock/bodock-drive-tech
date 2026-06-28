@@ -122,17 +122,16 @@ function Landing() {
             <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 text-xs font-medium ring-1 ring-white/20 backdrop-blur">
               <MapPin className="size-3.5" /> Arcos / MG · Atendemos toda a região
             </div>
-            <h1 className="mt-6 font-display text-4xl font-extrabold leading-[1.05] text-balance sm:text-5xl md:text-6xl">
+            <h1 className="mt-6 font-display text-4xl font-extrabold leading-[1.15] text-balance sm:text-5xl md:text-6xl">
               Certificado Digital para{" "}
-              <span className="text-secondary-foreground bg-secondary/90 px-2 rounded-md">
+              <span className="text-secondary-foreground bg-secondary/90 px-2 pb-1.5 rounded-md inline-block">
                 quem não pode parar.
               </span>
             </h1>
             <p className="mt-6 max-w-xl text-lg text-white/85">
               Emita seu Certificado Digital{" "}
               <strong className="text-white">presencialmente ou por videoconferência</strong> com
-              atendimento rápido. Parceiro oficial da{" "}
-              <strong className="text-white">Contabilidade Lacerda Reis</strong>.
+              atendimento rápido e sem burocracia.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
