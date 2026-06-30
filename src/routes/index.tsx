@@ -15,7 +15,17 @@ import {
   KeyRound,
   FileCheck2,
   ShieldCheck,
+  Pickaxe,
+  Zap,
 } from "lucide-react";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import heroTrucker from "@/assets/hero-trucker.jpg";
 import trucksFleet from "@/assets/trucks-fleet.jpg";
 import techService from "@/assets/tech-service.jpg";
@@ -30,6 +40,9 @@ const WHATSAPP_URL =
 
 const WHATSAPP_LACERDA_REIS_URL =
   "https://wa.me/5537000000000?text=Ol%C3%A1!%20Vim%20pela%20indica%C3%A7%C3%A3o%20da%20Contabilidade%20Lacerda%20Reis%20e%20quero%20informa%C3%A7%C3%B5es%20sobre%20o%20Certificado%20Digital.";
+
+const WHATSAPP_LACERDA_REIS_CONTADOR_URL =
+  "https://wa.me/553788525276?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20de%20Certificado%20Digital%20da%20Bodock%20Planet%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20de%20contabilidade.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -123,15 +136,14 @@ function Landing() {
               <MapPin className="size-3.5" /> Arcos / MG · Atendemos toda a região
             </div>
             <h1 className="mt-6 font-display text-4xl font-extrabold leading-[1.15] text-balance sm:text-5xl md:text-6xl">
-              Certificado Digital para{" "}
+              Quem move Arcos e região{" "}
               <span className="text-secondary-foreground bg-secondary/90 px-2 pb-1.5 rounded-md inline-block">
-                quem não pode parar.
+                não pode parar.
               </span>
             </h1>
             <p className="mt-6 max-w-xl text-lg text-white/85">
-              Emita seu Certificado Digital{" "}
-              <strong className="text-white">presencialmente ou por videoconferência</strong> com
-              atendimento rápido e sem burocracia.
+              Caminhão parado é prejuízo. Certificado digital pronto hoje,{" "}
+              <strong className="text-white">presencial ou por videoconferência.</strong>
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
@@ -216,6 +228,45 @@ function Landing() {
         </div>
       </section>
 
+      {/* FEITO PARA QUEM VIVE NA ESTRADA */}
+      <section className="mx-auto max-w-7xl px-6 py-20 md:py-28">
+        <div className="grid gap-12 md:grid-cols-2 md:items-center">
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-full bg-secondary/15 px-3 py-1.5 text-xs font-semibold text-secondary">
+              <Truck className="size-3.5" /> Para motoristas MEI
+            </div>
+            <h2 className="mt-4 font-display text-3xl font-bold sm:text-4xl text-balance">
+              Feito para quem vive na estrada.
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              Atendemos diariamente motoristas que transportam cimento, cal, calcário
+              e minério em Arcos/MG e região. Sabemos que um caminhão parado por falta
+              de Certificado Digital pode significar perder um frete. Por isso
+              oferecemos atendimento rápido, direto e sem burocracia.
+            </p>
+          </div>
+
+          <div className="grid gap-3 sm:grid-cols-2">
+            {[
+              { icon: Truck, text: "Atendimento especializado para caminhoneiros" },
+              { icon: Pickaxe, text: "Especialistas na região das mineradoras" },
+              { icon: MapPin, text: "Arcos e cidades vizinhas" },
+              { icon: Zap, text: "Emissão rápida" },
+            ].map(({ icon: Icon, text }) => (
+              <div
+                key={text}
+                className="flex items-start gap-3 rounded-xl border border-border bg-card p-4 shadow-sm"
+              >
+                <div className="grid size-10 shrink-0 place-items-center rounded-lg bg-primary/10 text-primary">
+                  <Icon className="size-5" />
+                </div>
+                <span className="text-sm font-medium leading-snug pt-1">{text}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* INDICAÇÃO LACERDA REIS */}
       <section className="bg-secondary py-12">
         <div className="mx-auto max-w-7xl px-6">
@@ -242,15 +293,25 @@ function Landing() {
               </div>
             </div>
 
-            {/* Botão */}
-            <a
-              href={WHATSAPP_LACERDA_REIS_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex shrink-0 items-center gap-2.5 rounded-full bg-white px-7 py-4 font-semibold text-secondary shadow-elevated transition-all hover:scale-[1.03] active:scale-[0.99]"
-            >
-              <MessageCircle className="size-5" /> Sou cliente Lacerda Reis
-            </a>
+            {/* Botões */}
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+              <a
+                href={WHATSAPP_LACERDA_REIS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex shrink-0 items-center gap-2.5 rounded-full bg-white px-7 py-4 font-semibold text-secondary shadow-elevated transition-all hover:scale-[1.03] active:scale-[0.99]"
+              >
+                <MessageCircle className="size-5" /> Sou cliente Lacerda Reis
+              </a>
+              <a
+                href={WHATSAPP_LACERDA_REIS_CONTADOR_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex shrink-0 items-center gap-2 rounded-full border-2 border-white/40 bg-white/10 px-5 py-3 text-sm font-semibold text-white backdrop-blur transition-all hover:bg-white/20 active:scale-[0.99]"
+              >
+                <MessageCircle className="size-4" /> Preciso de Contador
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -319,6 +380,64 @@ function Landing() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PREÇOS */}
+      <section id="precos" className="bg-muted/40 py-20 md:py-28">
+        <div className="mx-auto max-w-4xl px-6">
+          <div className="text-center">
+            <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1.5 text-xs font-semibold text-primary">
+              <FileCheck2 className="size-3.5" /> Tabela de Preços
+            </div>
+            <h2 className="mt-4 font-display text-3xl font-bold sm:text-4xl text-balance">
+              Certificado A1 — valor justo, sem pegadinha.
+            </h2>
+            <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
+              Escolha entre presencial ou videoconferência. Validade de 1 ano em todos os modelos.
+            </p>
+          </div>
+
+          <div className="mt-10 overflow-hidden rounded-2xl border border-border bg-card shadow-soft">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Tipo</TableHead>
+                  <TableHead>Atendimento</TableHead>
+                  <TableHead>Validade</TableHead>
+                  <TableHead className="text-right">Valor</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {pricingPlans.map((p) => (
+                  <TableRow key={`${p.type}-${p.mode}`}>
+                    <TableCell className="font-medium">{p.type}</TableCell>
+                    <TableCell className="text-muted-foreground">{p.mode}</TableCell>
+                    <TableCell className="text-muted-foreground">{p.validity}</TableCell>
+                    <TableCell className="text-right font-display font-bold text-primary">
+                      {p.price}
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
+
+          <p className="mt-6 text-center text-sm text-muted-foreground">
+            Trabalhamos também com Certificado A3 (validade de até 3 anos) — consulte valores e
+            disponibilidade pelo WhatsApp.
+          </p>
+
+          <div className="mt-8 flex justify-center">
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-whatsapp inline-flex items-center gap-2 rounded-full px-6 py-3.5 font-semibold shadow-soft"
+            >
+              <MessageCircle className="size-5" /> Solicitar Certificado A1
+            </a>
           </div>
         </div>
       </section>
@@ -630,6 +749,13 @@ const services = [
   { icon: HardDrive, title: "Upgrade e Troca de SSD", desc: "Seu computador muito mais rápido em poucas horas." },
   { icon: Wrench, title: "Formatação e Windows", desc: "Instalação limpa, programas essenciais e backup." },
   { icon: KeyRound, title: "Backup e Suporte", desc: "Seus dados protegidos e suporte sempre que precisar." },
+];
+
+const pricingPlans = [
+  { type: "e-CPF (Pessoa Física)", mode: "Presencial", validity: "1 ano", price: "R$ 100" },
+  { type: "e-CPF (Pessoa Física)", mode: "Videoconferência", validity: "1 ano", price: "R$ 128" },
+  { type: "e-CNPJ (Pessoa Jurídica)", mode: "Presencial", validity: "1 ano", price: "R$ 159" },
+  { type: "e-CNPJ (Pessoa Jurídica)", mode: "Videoconferência", validity: "1 ano", price: "R$ 178" },
 ];
 
 const audiences = [
