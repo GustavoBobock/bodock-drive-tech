@@ -605,7 +605,6 @@ function Landing() {
                 </div>
               </div>
               <div className="mt-3 space-y-0.5 text-xs text-muted-foreground">
-                <div>Parceiro Oficial da Contabilidade Lacerda Reis · Arcos / MG</div>
                 <div>Av. Governador Valadares, nº 171, sala 03 — Galeria Arcos Shopping, Centro · Arcos/MG</div>
                 <div>CNPJ: 43.834.782/0001-77</div>
               </div>
@@ -622,21 +621,61 @@ function Landing() {
           </div>
 
           {/* Parceiros */}
-          <div className="mt-8 border-t pt-6">
-            <div className="flex flex-col items-center gap-4 sm:flex-row sm:items-center sm:justify-between">
-              <div className="text-center text-xs text-muted-foreground sm:text-left">
-                © {new Date().getFullYear()} Bodock Planet Tecnologia. Todos os direitos reservados.
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-xs text-muted-foreground">Parceiro Oficial</span>
-                <div className="rounded-lg bg-white px-3 py-1.5 ring-1 ring-border">
+          <div className="mt-8 border-t pt-8">
+            <div className="grid gap-6 sm:grid-cols-2">
+              <div className="flex flex-col items-center gap-4 rounded-2xl bg-card p-6 text-center ring-1 ring-border sm:flex-row sm:text-left">
+                <div className="flex size-20 shrink-0 items-center justify-center rounded-xl bg-white p-3 ring-1 ring-border">
                   <img
                     src={logoV9}
                     alt="V9 Soluções Tecnológicas"
-                    className="h-8 w-auto object-contain"
+                    className="h-full w-full object-contain"
                   />
                 </div>
+                <div>
+                  <div className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                    Parceiro Técnico Oficial
+                  </div>
+                  <div className="mt-1 font-display text-lg font-bold">V9 Soluções</div>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    Certificados emitidos com suporte da V9 Soluções, autoridade certificadora
+                    credenciada ICP-Brasil.
+                  </p>
+                </div>
               </div>
+
+              <div className="flex flex-col items-center gap-4 rounded-2xl bg-card p-6 text-center ring-1 ring-border sm:flex-row sm:text-left">
+                <div className="flex size-20 shrink-0 items-center justify-center rounded-xl bg-white p-3 ring-1 ring-border">
+                  <img
+                    src={logoLacerdaReis}
+                    alt="Contabilidade Lacerda Reis"
+                    className="h-full w-full object-contain"
+                  />
+                </div>
+                <div>
+                  <div className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                    Parceiro Indicador Oficial
+                  </div>
+                  <div className="mt-1 font-display text-lg font-bold">
+                    Contabilidade Lacerda Reis
+                  </div>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    Parceria de confiança mútua. Precisa de contador em Arcos/MG? Fale com a
+                    Lacerda Reis.
+                  </p>
+                  <a
+                    href={WHATSAPP_LACERDA_REIS_CONTADOR_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3 inline-flex items-center gap-2 rounded-full bg-secondary px-4 py-2 text-sm font-semibold text-secondary-foreground shadow-soft"
+                  >
+                    <MessageCircle className="size-4" /> Falar com a Lacerda Reis
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 text-center text-xs text-muted-foreground">
+              © {new Date().getFullYear()} Bodock Planet Tecnologia. Todos os direitos reservados.
             </div>
           </div>
         </div>
