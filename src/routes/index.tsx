@@ -28,7 +28,6 @@ import {
 } from "@/components/ui/table";
 import heroTrucker from "@/assets/hero-trucker.jpg";
 import trucksFleet from "@/assets/trucks-fleet.jpg";
-import techService from "@/assets/tech-service.jpg";
 import logoBodock from "@/assets/logo-tipo-bodock-png-semfundo.png";
 import logoLacerdaReis from "@/assets/logo-lacerdaresis-parceiro-semfundo.png";
 import logoV9 from "@/assets/logo-v9-parceiro.png";
@@ -465,45 +464,36 @@ function Landing() {
           </div>
 
           <div className="mt-12 overflow-hidden rounded-3xl bg-card shadow-soft ring-1 ring-black/5">
-            <div className="grid md:grid-cols-2">
-              <div className="p-8 md:p-10">
-                <h3 className="font-display text-2xl font-bold">
-                  Montagem de PC Gamer e Upgrades
-                </h3>
-                <p className="mt-3 text-muted-foreground">
-                  Monte um PC sob medida pro seu uso: jogos, trabalho ou estudo. Indicamos as peças
-                  certas pra o que você precisa — sem empurrar componente caro à toa.
-                </p>
-                <ul className="mt-5 space-y-2 text-sm">
-                  {[
-                    "Indicação honesta de peças",
-                    "Upgrade de SSD, memória e placa de vídeo",
-                    "Suporte antes e depois da venda",
-                  ].map((i) => (
-                    <li key={i} className="flex items-center gap-2">
-                      <CheckCircle2 className="size-4 text-secondary" /> {i}
-                    </li>
-                  ))}
-                </ul>
-                <a
-                  href={WHATSAPP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-whatsapp mt-7 inline-flex items-center gap-2 rounded-full px-5 py-3 font-semibold shadow-soft"
-                >
-                  <MessageCircle className="size-4" /> Resolver agora
-                </a>
-              </div>
-              <div className="relative min-h-64 md:min-h-full">
-                <img
-                  src={techService}
-                  alt="Técnico realizando manutenção em notebook na loja Bodock Planet em Arcos/MG"
-                  loading="lazy"
-                  width={1280}
-                  height={896}
-                  className="absolute inset-0 size-full object-cover"
-                />
-              </div>
+            <div className="p-8 md:p-10">
+              <h3 className="font-display text-2xl font-bold">
+                Suporte de TI para sua empresa — sem complicação.
+              </h3>
+              <p className="mt-3 text-muted-foreground">
+                Cuidamos da infraestrutura de TI do seu negócio pra você focar no que importa:
+                upgrades, manutenção preventiva e corretiva, formatação, troca de peças simples e
+                venda de computadores — tudo com atendimento ágil, transparente e sem enrolação.
+              </p>
+              <ul className="mt-5 space-y-2 text-sm">
+                {[
+                  "Manutenção preventiva e corretiva",
+                  "Upgrades de hardware e desempenho",
+                  "Formatação e otimização de sistemas",
+                  "Troca de peças simples (memória, SSD, fonte, etc.)",
+                  "Venda de computadores novos e usados",
+                ].map((i) => (
+                  <li key={i} className="flex items-center gap-2">
+                    <CheckCircle2 className="size-4 text-secondary" /> {i}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-whatsapp mt-7 inline-flex items-center gap-2 rounded-full px-5 py-3 font-semibold shadow-soft"
+              >
+                <MessageCircle className="size-4" /> Resolver agora
+              </a>
             </div>
           </div>
         </div>
@@ -754,7 +744,7 @@ const services = [
 const pricingPlans = [
   { type: "e-CPF (Pessoa Física)", mode: "Presencial", validity: "1 ano", price: "R$ 100" },
   { type: "e-CPF (Pessoa Física)", mode: "Videoconferência", validity: "1 ano", price: "R$ 128" },
-  { type: "e-CNPJ (Pessoa Jurídica)", mode: "Presencial", validity: "1 ano", price: "R$ 159" },
+  { type: "e-CNPJ (Pessoa Jurídica)", mode: "Presencial", validity: "1 ano", price: "R$ 158" },
   { type: "e-CNPJ (Pessoa Jurídica)", mode: "Videoconferência", validity: "1 ano", price: "R$ 178" },
 ];
 
