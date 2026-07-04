@@ -202,7 +202,7 @@ function Landing() {
                 <MessageCircle className="size-5" /> Solicitar pelo WhatsApp
               </a>
               <p className="mt-3 text-center text-xs text-muted-foreground">
-                Resposta humana · Sem robô · Sem espera
+                Atendimento real · Sem burocracia · Arcos/MG
               </p>
             </div>
           </div>
