@@ -46,19 +46,27 @@ const WHATSAPP_LACERDA_REIS_CONTADOR_URL =
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Bodock Planet — Certificado Digital em Arcos/MG para quem não pode parar" },
+      { title: "Certificado Digital para Motorista, CIOT e CT-e | Bodock Planet" },
       {
         name: "description",
         content:
-          "Certificado Digital A1 e A3, presencial ou por videoconferência, com atendimento rápido em Arcos/MG. Parceiro da Contabilidade Lacerda Reis.",
+          "Emita seu Certificado Digital para CIOT, CT-e, MEI e Transportadores. Atendimento por videoconferência ou presencial em Arcos/MG.",
       },
-      { property: "og:title", content: "Bodock Planet — Certificado Digital para quem não pode parar" },
+      { property: "og:site_name", content: "Bodock Planet Tecnologia" },
+      { property: "og:url", content: "https://motorista.bodockplanet.tec.br" },
+      { property: "og:title", content: "Certificado Digital para Motorista, CIOT e CT-e | Bodock Planet" },
       {
         property: "og:description",
         content:
-          "Emita seu Certificado Digital com atendimento humano, rápido e sem burocracia. Caminhoneiros, empresas e produtores rurais.",
+          "Emita seu Certificado Digital para CIOT, CT-e, MEI e Transportadores. Atendimento por videoconferência ou presencial em Arcos/MG.",
       },
       { property: "og:image", content: heroTrucker },
+      { name: "twitter:title", content: "Certificado Digital para Motorista, CIOT e CT-e | Bodock Planet" },
+      {
+        name: "twitter:description",
+        content:
+          "Emita seu Certificado Digital para CIOT, CT-e, MEI e Transportadores. Atendimento por videoconferência ou presencial em Arcos/MG.",
+      },
       { name: "twitter:image", content: heroTrucker },
     ],
   }),
