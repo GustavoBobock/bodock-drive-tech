@@ -17,6 +17,7 @@ import {
   ShieldCheck,
   Pickaxe,
   Zap,
+  HelpCircle,
 } from "lucide-react";
 import {
   Table,
@@ -26,6 +27,12 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import heroTrucker from "@/assets/hero-trucker.jpg";
 import trucksFleet from "@/assets/trucks-fleet.jpg";
 import logoBodock from "@/assets/logo-tipo-bodock-png-semfundo.png";
@@ -594,6 +601,36 @@ function Landing() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section id="faq" className="bg-muted/40 py-20 md:py-28">
+        <div className="mx-auto max-w-3xl px-6">
+          <div className="text-center">
+            <div className="inline-flex items-center gap-2 rounded-full bg-secondary/15 px-3 py-1.5 text-xs font-semibold text-secondary">
+              <HelpCircle className="size-3.5" /> Dúvidas Frequentes
+            </div>
+            <h2 className="mt-4 font-display text-3xl font-bold sm:text-4xl text-balance">
+              Perguntas que todo motorista faz
+            </h2>
+          </div>
+
+          <Accordion type="single" collapsible className="mt-10">
+            {faqs.map((f, i) => (
+              <AccordionItem key={f.q} value={`faq-${i}`}>
+                <AccordionTrigger className="font-display text-base font-semibold">
+                  {f.q}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">{f.a}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      </section>
+
       {/* FOOTER */}
       <footer className="border-t bg-muted/40">
         <div className="mx-auto max-w-7xl px-6 py-12">
@@ -778,6 +815,46 @@ function ServiceCard({
     </div>
   );
 }
+
+const faqs = [
+  {
+    q: "Preciso de Certificado Digital para emitir CIOT?",
+    a: "Sim. Desde maio de 2026 o CIOT é obrigatório para todas as operações de frete. Sem Certificado Digital você não consegue emitir o CIOT e o MDF-e é rejeitado automaticamente. Caminhão parado na fiscalização.",
+  },
+  {
+    q: "Posso fazer por videoconferência?",
+    a: "Sim. Fazemos o atendimento completo por videoconferência, sem você precisar sair do caminhão ou da empresa. Você só precisa de celular ou computador com câmera.",
+  },
+  {
+    q: "Quanto tempo demora?",
+    a: "Em média 30 minutos. Você agenda, a gente confirma, e o certificado fica pronto no mesmo dia.",
+  },
+  {
+    q: "Quanto custa?",
+    a: "O Certificado A1 começa em R$ 100,00 para Pessoa Física presencial. Por videoconferência a partir de R$ 128,00. Para empresa (CNPJ) a partir de R$ 158,00 presencial ou R$ 178,00 por videoconferência. Validade de 1 ano.",
+  },
+  {
+    q: "O certificado serve para CT-e e MDF-e?",
+    a: "Sim. O mesmo certificado serve para emitir CT-e, MDF-e, CIOT e qualquer outro documento fiscal eletrônico.",
+  },
+  {
+    q: "Vale para todo Brasil?",
+    a: "Sim. O Certificado Digital ICP-Brasil tem validade nacional. Você emite aqui em Arcos/MG e usa em qualquer estado.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: f.a,
+    },
+  })),
+};
 
 const services = [
   { icon: Monitor, title: "Manutenção de Computadores", desc: "Diagnóstico honesto e conserto sem dor de cabeça." },
