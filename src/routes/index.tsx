@@ -42,13 +42,13 @@ import gustavoContato from "@/assets/gustavo-contato.png";
 import iconeWhatsapp from "@/assets/icone-whatsapp (3).png";
 
 const WHATSAPP_URL =
-  "https://wa.me/5537000000000?text=Ol%C3%A1!%20Quero%20informa%C3%A7%C3%B5es%20sobre%20o%20Certificado%20Digital.";
+  "https://wa.me/5537999591557?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20motorista.bodockplanet.tec.br%20e%20quero%20informa%C3%A7%C3%B5es%20sobre%20Certificado%20Digital.";
 
 const WHATSAPP_LACERDA_REIS_URL =
-  "https://wa.me/5537000000000?text=Ol%C3%A1!%20Vim%20pela%20indica%C3%A7%C3%A3o%20da%20Contabilidade%20Lacerda%20Reis%20e%20quero%20informa%C3%A7%C3%B5es%20sobre%20o%20Certificado%20Digital.";
+  "https://wa.me/5537988525276?text=Ol%C3%A1!%20Sou%20cliente%20da%20Contabilidade%20Lacerda%20Reis%20e%20vim%20pela%20p%C3%A1gina%20da%20Bodock%20Planet.%20Quero%20informa%C3%A7%C3%B5es%20sobre%20Certificado%20Digital.";
 
 const WHATSAPP_LACERDA_REIS_CONTADOR_URL =
-  "https://wa.me/553788525276?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20de%20Certificado%20Digital%20da%20Bodock%20Planet%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20de%20contabilidade.";
+  "https://wa.me/5537988525276?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20de%20Certificado%20Digital%20da%20Bodock%20Planet%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20de%20contabilidade.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
