@@ -53,9 +53,6 @@ const WHATSAPP_LACERDA_REIS_CONTADOR_URL =
 const WHATSAPP_CIOT_URL =
   "https://wa.me/5537999591557?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20motorista.bodockplanet.tec.br%20e%20quero%20emitir%20meu%20Certificado%20Digital%20para%20CIOT.";
 
-const WHATSAPP_LACERDA_DUVIDA_URL =
-  "https://wa.me/5537988525276?text=Ol%C3%A1!%20Estou%20com%20d%C3%BAvidas%20sobre%20Certificado%20Digital%20e%20fui%20indicado%20pela%20p%C3%A1gina%20da%20Bodock%20Planet.";
-
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -242,7 +239,7 @@ function Landing() {
               videoconferência ou presencial em Arcos/MG.
             </p>
 
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <div className="mt-6">
               <a
                 href={WHATSAPP_CIOT_URL}
                 target="_blank"
@@ -250,14 +247,6 @@ function Landing() {
                 className="btn-whatsapp inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 font-semibold shadow-soft"
               >
                 <MessageCircle className="size-5" /> Emitir pelo WhatsApp
-              </a>
-              <a
-                href={WHATSAPP_LACERDA_DUVIDA_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-border px-5 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-muted"
-              >
-                <MessageCircle className="size-4" /> Dúvidas? Fale com a Lacerda Reis
               </a>
             </div>
           </div>
