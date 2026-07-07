@@ -50,6 +50,12 @@ const WHATSAPP_LACERDA_REIS_URL =
 const WHATSAPP_LACERDA_REIS_CONTADOR_URL =
   "https://wa.me/5537988525276?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20de%20Certificado%20Digital%20da%20Bodock%20Planet%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20de%20contabilidade.";
 
+const WHATSAPP_CIOT_URL =
+  "https://wa.me/5537999591557?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20motorista.bodockplanet.tec.br%20e%20quero%20emitir%20meu%20Certificado%20Digital%20para%20CIOT.";
+
+const WHATSAPP_LACERDA_DUVIDA_URL =
+  "https://wa.me/5537988525276?text=Ol%C3%A1!%20Estou%20com%20d%C3%BAvidas%20sobre%20Certificado%20Digital%20e%20fui%20indicado%20pela%20p%C3%A1gina%20da%20Bodock%20Planet.";
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -221,6 +227,48 @@ function Landing() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* CIOT CTA */}
+      <section className="mx-auto max-w-5xl px-6 py-10 md:py-14">
+        <div className="grid gap-8 rounded-3xl bg-card p-6 shadow-soft ring-1 ring-black/5 sm:p-8 md:grid-cols-2 md:items-center md:p-10">
+          <div>
+            <h2 className="font-display text-2xl font-bold sm:text-3xl text-balance">
+              Vai emitir CIOT?
+            </h2>
+            <p className="mt-3 text-muted-foreground">
+              O Certificado Digital resolve tudo de uma vez. Emitimos rapidamente por
+              videoconferência ou presencial em Arcos/MG.
+            </p>
+
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <a
+                href={WHATSAPP_CIOT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-whatsapp inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 font-semibold shadow-soft"
+              >
+                <MessageCircle className="size-5" /> Emitir pelo WhatsApp
+              </a>
+              <a
+                href={WHATSAPP_LACERDA_DUVIDA_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-border px-5 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-muted"
+              >
+                <MessageCircle className="size-4" /> Dúvidas? Fale com a Lacerda Reis
+              </a>
+            </div>
+          </div>
+
+          <ul className="grid grid-cols-2 gap-3 text-sm">
+            {["CIOT", "CT-e", "MDF-e", "NF-e", "Gov.br", "Receita Federal"].map((t) => (
+              <li key={t} className="flex items-center gap-2 font-medium">
+                <CheckCircle2 className="size-4 shrink-0 text-secondary" /> {t}
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
