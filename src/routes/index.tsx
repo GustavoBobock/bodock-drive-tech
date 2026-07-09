@@ -531,6 +531,40 @@ function Landing() {
         </div>
       </section>
 
+      {/* QUEM VAI TE ATENDER */}
+      <section className="mx-auto max-w-xl px-6 py-12 md:py-16">
+        <h2 className="text-center font-display text-2xl font-bold text-balance">
+          Quem vai te atender
+        </h2>
+
+        <div className="mt-6 flex flex-col items-center rounded-3xl bg-card p-8 text-center shadow-soft ring-1 ring-black/5">
+          <div
+            className="size-20 rounded-full p-[3px] shadow-md"
+            style={{ background: "linear-gradient(135deg, #C62828, #2E7D32)" }}
+          >
+            <div className="size-full overflow-hidden rounded-full bg-white">
+              <img
+                src={gustavoContato}
+                alt="Gustavo Lamounier"
+                className="size-full object-cover"
+                style={{ objectPosition: "center 12%" }}
+              />
+            </div>
+          </div>
+          <h3 className="mt-4 font-display text-lg font-bold">Gustavo Lamounier</h3>
+          <p className="text-sm text-muted-foreground">Agente de Registro Autorizado</p>
+
+          <div className="mt-3 flex items-center gap-2 rounded-full bg-muted px-3 py-1.5 ring-1 ring-border">
+            <img src={logoV9} alt="V9 Soluções Tecnológicas" className="h-4 w-auto object-contain" />
+            <span className="text-xs font-semibold text-muted-foreground">V9 Soluções Tecnológicas</span>
+          </div>
+
+          <p className="mt-5 max-w-sm text-sm text-muted-foreground">
+            Atendimento presencial em Arcos/MG e por videoconferência para todo o Brasil.
+          </p>
+        </div>
+      </section>
+
       {/* PUBLICO */}
       <section className="mx-auto max-w-7xl px-6 py-20 md:py-28">
         <div className="text-center">
