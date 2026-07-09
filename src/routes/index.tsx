@@ -114,7 +114,7 @@ function WhatsAppButton({
 
 function Landing() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-20 md:pb-0">
       {/* NAV */}
       <header className="absolute top-0 z-20 w-full">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
@@ -809,8 +809,23 @@ function Landing() {
         </div>
       </footer>
 
+      {/* BOTTOM BAR MOBILE */}
+      <div className="fixed inset-x-0 bottom-0 z-40 flex items-center justify-between gap-3 border-t bg-white px-4 py-3.5 shadow-[0_-2px_10px_rgba(0,0,0,0.08)] md:hidden">
+        <div className="text-xs font-medium text-muted-foreground">
+          A1 PF a partir de <span className="font-display font-bold text-foreground">R$ 100</span>
+        </div>
+        <a
+          href={WHATSAPP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-whatsapp inline-flex shrink-0 items-center gap-2 rounded-full px-5 py-3 text-sm font-semibold shadow-soft"
+        >
+          <MessageCircle className="size-4" /> Emitir pelo WhatsApp
+        </a>
+      </div>
+
       {/* FLOATING CONTACT */}
-      <div className="fixed bottom-5 right-5 z-30 flex flex-col items-center gap-2.5">
+      <div className="fixed bottom-5 right-5 z-30 flex flex-col items-center gap-2.5 max-md:bottom-24">
         {/* Avatar com anel girando */}
         <a
           href={WHATSAPP_URL}
