@@ -88,7 +88,7 @@ export const Route = createFileRoute("/")({
 const rotatingPrices = [
   "A1 PF Presencial — R$ 100",
   "A1 PF Vídeo — R$ 128",
-  "A1 MEI/CNPJ Presencial — R$ 158",
+  "CNPJ Presencial — R$ 158",
   "A1 CNPJ Vídeo — R$ 178",
 ];
 
