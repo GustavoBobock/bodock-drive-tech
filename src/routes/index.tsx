@@ -1,18 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
   Truck,
-  Monitor,
-  Laptop,
-  Wrench,
-  HardDrive,
   Video,
   MapPin,
   Clock,
   Handshake,
   CheckCircle2,
   MessageCircle,
-  Cpu,
-  KeyRound,
   FileCheck2,
   ShieldCheck,
   Pickaxe,
@@ -493,64 +487,6 @@ function Landing() {
         </div>
       </section>
 
-      {/* SERVIÇOS */}
-      <section id="servicos" className="bg-muted/40 py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 rounded-full bg-secondary/15 px-3 py-1.5 text-xs font-semibold text-secondary">
-              <Wrench className="size-3.5" /> Assistência Técnica
-            </div>
-            <h2 className="mt-4 font-display text-3xl font-bold sm:text-4xl text-balance">
-              Seu computador funcionando como deveria — sem complicação.
-            </h2>
-            <p className="mt-4 text-muted-foreground">
-              Atendimento direto, transparente e com linguagem simples. A gente explica o que
-              precisa, faz o orçamento honesto e resolve.
-            </p>
-          </div>
-
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((s) => (
-              <ServiceCard key={s.title} {...s} />
-            ))}
-          </div>
-
-          <div className="mt-12 overflow-hidden rounded-3xl bg-card shadow-soft ring-1 ring-black/5">
-            <div className="p-8 md:p-10">
-              <h3 className="font-display text-2xl font-bold">
-                Suporte de TI para sua empresa — sem complicação.
-              </h3>
-              <p className="mt-3 text-muted-foreground">
-                Cuidamos da infraestrutura de TI do seu negócio pra você focar no que importa:
-                upgrades, manutenção preventiva e corretiva, formatação, troca de peças simples e
-                venda de computadores — tudo com atendimento ágil, transparente e sem enrolação.
-              </p>
-              <ul className="mt-5 space-y-2 text-sm">
-                {[
-                  "Manutenção preventiva e corretiva",
-                  "Upgrades de hardware e desempenho",
-                  "Formatação e otimização de sistemas",
-                  "Troca de peças simples (memória, SSD, fonte, etc.)",
-                  "Venda de computadores novos e usados",
-                ].map((i) => (
-                  <li key={i} className="flex items-center gap-2">
-                    <CheckCircle2 className="size-4 text-secondary" /> {i}
-                  </li>
-                ))}
-              </ul>
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-whatsapp mt-7 inline-flex items-center gap-2 rounded-full px-5 py-3 font-semibold shadow-soft"
-              >
-                <MessageCircle className="size-4" /> Resolver agora
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* PUBLICO */}
       <section className="mx-auto max-w-7xl px-6 py-20 md:py-28">
         <div className="text-center">
@@ -833,26 +769,6 @@ function CertCard({ title, items }: { title: string; items: string[] }) {
   );
 }
 
-function ServiceCard({
-  icon: Icon,
-  title,
-  desc,
-}: {
-  icon: React.ComponentType<{ className?: string }>;
-  title: string;
-  desc: string;
-}) {
-  return (
-    <div className="group rounded-2xl border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:shadow-soft">
-      <div className="grid size-12 place-items-center rounded-xl bg-secondary/15 text-secondary transition-colors group-hover:bg-secondary group-hover:text-secondary-foreground">
-        <Icon className="size-6" />
-      </div>
-      <h3 className="mt-5 font-display text-lg font-semibold">{title}</h3>
-      <p className="mt-2 text-sm text-muted-foreground">{desc}</p>
-    </div>
-  );
-}
-
 const faqs = [
   {
     q: "Preciso de Certificado Digital para emitir CIOT?",
@@ -893,14 +809,6 @@ const faqSchema = {
   })),
 };
 
-const services = [
-  { icon: Monitor, title: "Manutenção de Computadores", desc: "Diagnóstico honesto e conserto sem dor de cabeça." },
-  { icon: Laptop, title: "Manutenção de Notebook", desc: "Troca de tela, teclado, bateria e reparos em geral." },
-  { icon: Cpu, title: "Montagem de PC Gamer", desc: "Setup personalizado pro seu uso e orçamento." },
-  { icon: HardDrive, title: "Upgrade e Troca de SSD", desc: "Seu computador muito mais rápido em poucas horas." },
-  { icon: Wrench, title: "Formatação e Windows", desc: "Instalação limpa, programas essenciais e backup." },
-  { icon: KeyRound, title: "Backup e Suporte", desc: "Seus dados protegidos e suporte sempre que precisar." },
-];
 
 const pricingPlans = [
   { type: "e-CPF (Pessoa Física)", mode: "Presencial", validity: "1 ano", price: "R$ 100" },
