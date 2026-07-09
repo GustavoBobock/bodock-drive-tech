@@ -15,6 +15,7 @@ import {
   User,
   Building2,
   ClipboardList,
+  RefreshCw,
 } from "lucide-react";
 import {
   Table,
@@ -49,6 +50,9 @@ const WHATSAPP_LACERDA_REIS_CONTADOR_URL =
 
 const WHATSAPP_CIOT_URL =
   "https://wa.me/5537999591557?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20motorista.bodockplanet.tec.br%20e%20quero%20emitir%20meu%20Certificado%20Digital%20para%20CIOT.";
+
+const WHATSAPP_RENOVACAO_URL =
+  "https://wa.me/5537999591557?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20motorista.bodockplanet.tec.br%20e%20preciso%20renovar%20meu%20Certificado%20Digital.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -649,6 +653,34 @@ function Landing() {
           >
             <MessageCircle className="size-5" /> Solicitar pelo WhatsApp
           </a>
+        </div>
+      </section>
+
+      {/* RENOVAÇÃO */}
+      <section className="mx-auto max-w-xl px-6 py-12 md:py-16">
+        <div className="rounded-3xl bg-muted/40 p-8 text-center ring-1 ring-border">
+          <div className="flex items-center justify-center gap-2">
+            <div className="grid size-8 shrink-0 place-items-center rounded-full bg-primary/10 text-primary">
+              <RefreshCw className="size-4" />
+            </div>
+            <h2 className="font-display text-xl font-bold text-balance sm:text-2xl">
+              Seu certificado está vencendo?
+            </h2>
+          </div>
+          <p className="mx-auto mt-4 max-w-sm text-sm text-muted-foreground">
+            Renove sem complicação direto pelo WhatsApp. Atendimento rápido, sem fila. Aceitamos
+            cartão de crédito parcelado — os juros ficam com a operadora, você paga no seu ritmo.
+          </p>
+          <div className="mt-6 flex justify-center">
+            <a
+              href={WHATSAPP_RENOVACAO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-whatsapp inline-flex items-center gap-2 rounded-full px-6 py-3.5 font-semibold shadow-soft"
+            >
+              <MessageCircle className="size-5" /> Renovar pelo WhatsApp
+            </a>
+          </div>
         </div>
       </section>
 
