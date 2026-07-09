@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import {
   Truck,
   Video,
@@ -83,6 +84,40 @@ export const Route = createFileRoute("/")({
   }),
   component: Landing,
 });
+
+const rotatingPrices = [
+  "A1 PF Presencial — R$ 100",
+  "A1 PF Vídeo — R$ 128",
+  "A1 MEI/CNPJ Presencial — R$ 158",
+  "A1 CNPJ Vídeo — R$ 178",
+];
+
+function RotatingPrice() {
+  const [index, setIndex] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const hideTimer = setTimeout(() => setVisible(false), 2500);
+    const nextTimer = setTimeout(() => {
+      setIndex((i) => (i + 1) % rotatingPrices.length);
+      setVisible(true);
+    }, 2500 + 400);
+    return () => {
+      clearTimeout(hideTimer);
+      clearTimeout(nextTimer);
+    };
+  }, [index]);
+
+  return (
+    <span
+      className={`block truncate text-xs font-medium text-foreground transition-opacity duration-[400ms] ${
+        visible ? "opacity-100" : "opacity-0"
+      }`}
+    >
+      {rotatingPrices[index]}
+    </span>
+  );
+}
 
 function WhatsAppButton({
   children,
@@ -811,8 +846,8 @@ function Landing() {
 
       {/* BOTTOM BAR MOBILE */}
       <div className="fixed inset-x-0 bottom-0 z-40 flex items-center justify-between gap-3 border-t bg-white px-4 py-3.5 shadow-[0_-2px_10px_rgba(0,0,0,0.08)] md:hidden">
-        <div className="text-xs font-medium text-muted-foreground">
-          A1 PF a partir de <span className="font-display font-bold text-foreground">R$ 100</span>
+        <div className="min-w-0 flex-1">
+          <RotatingPrice />
         </div>
         <a
           href={WHATSAPP_URL}
