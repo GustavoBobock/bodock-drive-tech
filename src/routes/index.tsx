@@ -38,7 +38,6 @@ import logoBodock from "@/assets/logo-tipo-bodock-png-semfundo.png";
 import logoLacerdaReis from "@/assets/logo-lacerdaresis-parceiro-semfundo.png";
 import logoV9 from "@/assets/logo-v9-parceiro.png";
 import gustavoContato from "@/assets/gustavo-contato.png";
-import iconeWhatsapp from "@/assets/icone-whatsapp (3).png";
 
 const WHATSAPP_URL =
   "https://wa.me/5537999591557?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20motorista.bodockplanet.tec.br%20e%20quero%20informa%C3%A7%C3%B5es%20sobre%20Certificado%20Digital.";
@@ -886,8 +885,10 @@ function Landing() {
                 style={{ objectPosition: "center 12%" }}
               />
             </span>
-            {/* Ponto online */}
-            <span className="absolute bottom-1 right-1 z-10 size-3.5 rounded-full bg-green-400 ring-2 ring-white" />
+            {/* Badge WhatsApp */}
+            <span className="absolute bottom-0 right-0 z-10 grid size-6 place-items-center rounded-full border-2 border-white bg-[#25D366] shadow-sm">
+              <MessageCircle className="size-3.5 text-white" />
+            </span>
           </div>
         </a>
 
@@ -896,17 +897,6 @@ function Landing() {
           <span className="size-1.5 animate-pulse rounded-full bg-green-400" />
           Fale comigo!
         </div>
-
-        {/* Botão WhatsApp pulsando */}
-        <a
-          href={WHATSAPP_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Falar no WhatsApp"
-          className="wapp-pulse-btn block size-14 overflow-hidden rounded-full shadow-elevated"
-        >
-          <img src={iconeWhatsapp} alt="WhatsApp" className="size-full object-cover" />
-        </a>
       </div>
     </div>
   );
