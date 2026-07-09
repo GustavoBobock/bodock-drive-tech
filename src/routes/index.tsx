@@ -852,9 +852,26 @@ function Landing() {
           href={WHATSAPP_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="btn-whatsapp inline-flex shrink-0 items-center gap-2 rounded-full px-5 py-3 text-sm font-semibold shadow-soft"
+          aria-label="Falar com Gustavo no WhatsApp"
+          className="flex shrink-0 items-center gap-2"
         >
-          <MessageCircle className="size-4" /> Emitir pelo WhatsApp
+          <div
+            className="relative size-9 shrink-0 rounded-full p-[2px]"
+            style={{ background: "linear-gradient(135deg, #C62828, #2E7D32)" }}
+          >
+            <div className="size-full overflow-hidden rounded-full bg-white">
+              <img
+                src={gustavoContato}
+                alt="Gustavo — Bodock Planet"
+                className="size-full object-cover"
+                style={{ objectPosition: "center 12%" }}
+              />
+            </div>
+            <span className="absolute bottom-0 right-0 grid size-3.5 place-items-center rounded-full border border-white bg-[#25D366]">
+              <MessageCircle className="size-2 text-white" />
+            </span>
+          </div>
+          <span className="text-sm font-semibold text-foreground">Falar agora</span>
         </a>
       </div>
 
