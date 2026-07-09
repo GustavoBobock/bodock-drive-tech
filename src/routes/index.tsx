@@ -12,6 +12,9 @@ import {
   Pickaxe,
   Zap,
   HelpCircle,
+  User,
+  Building2,
+  ClipboardList,
 } from "lucide-react";
 import {
   Table,
@@ -487,6 +490,47 @@ function Landing() {
         </div>
       </section>
 
+      {/* DOCUMENTOS NECESSÁRIOS */}
+      <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+        <div className="text-center">
+          <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1.5 text-xs font-semibold text-primary">
+            <ClipboardList className="size-3.5" /> Antes de Agendar
+          </div>
+          <h2 className="mt-4 font-display text-3xl font-bold sm:text-4xl text-balance">
+            O que você precisa ter em mãos
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
+            Separe os documentos abaixo conforme o seu tipo de certificado e agilize o atendimento.
+          </p>
+        </div>
+
+        <div className="mt-12 grid gap-6 md:grid-cols-2">
+          {documentChecklists.map((c) => (
+            <div
+              key={c.title}
+              className="rounded-3xl bg-card p-6 shadow-soft ring-1 ring-black/5 sm:p-8"
+            >
+              <div className="flex items-center gap-3">
+                <div className="grid size-11 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary">
+                  <c.icon className="size-5" />
+                </div>
+                <h3 className="font-display text-xl font-bold text-balance">{c.title}</h3>
+              </div>
+              <ul className="mt-6 space-y-3 text-sm">
+                {c.items.map((item) => (
+                  <li key={item} className="flex items-center gap-2.5 font-medium">
+                    <CheckCircle2 className="size-4 shrink-0 text-secondary" /> {item}
+                  </li>
+                ))}
+              </ul>
+              {c.note && (
+                <p className="mt-5 text-xs text-muted-foreground">{c.note}</p>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* PUBLICO */}
       <section className="mx-auto max-w-7xl px-6 py-20 md:py-28">
         <div className="text-center">
@@ -815,6 +859,26 @@ const pricingPlans = [
   { type: "e-CPF (Pessoa Física)", mode: "Videoconferência", validity: "1 ano", price: "R$ 128" },
   { type: "e-CNPJ (Pessoa Jurídica)", mode: "Presencial", validity: "1 ano", price: "R$ 158" },
   { type: "e-CNPJ (Pessoa Jurídica)", mode: "Videoconferência", validity: "1 ano", price: "R$ 178" },
+];
+
+const documentChecklists = [
+  {
+    icon: User,
+    title: "MEI Motorista (e-CPF)",
+    items: ["CNH válida", "CPF", "Comprovante de endereço", "E-mail válido", "Telefone ativo"],
+  },
+  {
+    icon: Building2,
+    title: "Transportadora ou Empresa (e-CNPJ)",
+    items: [
+      "CNPJ ativo",
+      "CCMEI ou Contrato Social",
+      "CNH ou RG do responsável",
+      "E-mail válido",
+      "Telefone ativo",
+    ],
+    note: "Orientamos sobre documentação complementar no atendimento.",
+  },
 ];
 
 const audiences = [
