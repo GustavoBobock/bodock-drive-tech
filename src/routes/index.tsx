@@ -55,6 +55,9 @@ const WHATSAPP_CIOT_URL =
 const WHATSAPP_RENOVACAO_URL =
   "https://wa.me/5537999591557?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20motorista.bodockplanet.tec.br%20e%20preciso%20renovar%20meu%20Certificado%20Digital.";
 
+const WHATSAPP_DEV_URL =
+  "https://wa.me/5537999591557?text=Ol%C3%A1!%20Vi%20a%20p%C3%A1gina%20da%20Bodock%20Planet%20e%20gostaria%20de%20saber%20sobre%20cria%C3%A7%C3%A3o%20de%20landing%20pages.";
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -889,8 +892,21 @@ function Landing() {
               </div>
             </div>
 
-            <div className="mt-6 text-center text-xs text-muted-foreground">
-              © {new Date().getFullYear()} Bodock Planet Tecnologia. Todos os direitos reservados.
+            <div className="mt-6 flex flex-col items-center justify-between gap-2 text-center text-xs text-muted-foreground sm:flex-row sm:text-left">
+              <span>
+                © {new Date().getFullYear()} Bodock Planet Tecnologia. Todos os direitos reservados.
+              </span>
+              <span>
+                Desenvolvido por BDK EngenharIA Digital ·{" "}
+                <a
+                  href={WHATSAPP_DEV_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-foreground transition-colors"
+                >
+                  Quer uma página como essa?
+                </a>
+              </span>
             </div>
           </div>
         </div>
