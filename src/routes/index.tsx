@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useRef, useState } from "react";
-import Lottie, { type LottieRefCurrentProps } from "lottie-react";
+import { useEffect, useState } from "react";
 import {
   Truck,
   Video,
@@ -39,7 +38,6 @@ import logoBodock from "@/assets/logo-tipo-bodock-png-semfundo.png";
 import logoLacerdaReis from "@/assets/logo-lacerdaresis-parceiro-semfundo.png";
 import logoV9 from "@/assets/logo-v9-parceiro.png";
 import gustavoContato from "@/assets/gustavo-contato.png";
-import truckAnimation from "@/assets/truck-animation.json";
 
 const WHATSAPP_URL =
   "https://wa.me/5537999591557?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20motorista.bodockplanet.tec.br%20e%20quero%20informa%C3%A7%C3%B5es%20sobre%20Certificado%20Digital.";
@@ -149,10 +147,8 @@ function WhatsAppButton({
 }
 
 function Landing() {
-  const lottieRef = useRef<LottieRefCurrentProps>(null);
-
   return (
-    <div className="min-h-screen bg-background pb-24 md:pb-0">
+    <div className="min-h-screen bg-background pb-20 md:pb-0">
       {/* NAV */}
       <header className="absolute top-0 z-20 w-full">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
@@ -856,22 +852,14 @@ function Landing() {
           href={WHATSAPP_URL}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Falar com a Bodock Planet no WhatsApp"
-          className="flex shrink-0 items-center"
+          className="btn-whatsapp inline-flex shrink-0 items-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold"
         >
-          <Lottie
-            lottieRef={lottieRef}
-            animationData={truckAnimation}
-            loop={true}
-            autoplay={true}
-            style={{ height: 68, width: "auto" }}
-            onComplete={() => lottieRef.current?.goToAndPlay(0)}
-          />
+          <MessageCircle className="size-4" /> Chamar agora
         </a>
       </div>
 
       {/* FLOATING CONTACT */}
-      <div className="fixed bottom-5 right-5 z-30 flex flex-col items-center gap-2.5 max-md:bottom-32">
+      <div className="fixed bottom-5 right-5 z-30 flex flex-col items-center gap-2.5 max-md:bottom-24">
         {/* Avatar com anel girando */}
         <a
           href={WHATSAPP_URL}
