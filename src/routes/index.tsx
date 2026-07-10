@@ -34,6 +34,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import heroTrucker from "@/assets/hero-trucker.jpg";
+import elementoCertdigBdk from "@/assets/elemento-certdig-bdk.png";
 import trucksFleet from "@/assets/trucks-fleet.jpg";
 import logoBodock from "@/assets/logo-tipo-bodock-png-semfundo.png";
 import logoLacerdaReis from "@/assets/logo-lacerdaresis-parceiro-semfundo.png";
@@ -229,44 +230,52 @@ function Landing() {
 
           {/* Quick card */}
           <div className="md:justify-self-end">
-            <div className="w-full max-w-md rounded-2xl bg-white p-6 shadow-elevated ring-1 ring-black/5">
-              <div className="flex items-center gap-3">
-                <div className="grid size-11 place-items-center rounded-xl bg-primary/10 text-primary">
-                  <FileCheck2 className="size-5" />
-                </div>
-                <div>
-                  <div className="font-display font-bold">Resolver agora</div>
-                  <div className="text-sm text-muted-foreground">
-                    Resposta no WhatsApp em minutos
+            <div className="relative w-full max-w-md overflow-hidden rounded-2xl bg-white p-6 shadow-elevated ring-1 ring-black/5">
+              <img
+                src={elementoCertdigBdk}
+                alt=""
+                aria-hidden="true"
+                className="pointer-events-none absolute top-1/2 left-1/2 w-[212px] -translate-x-1/2 -translate-y-1/2 select-none opacity-[0.11]"
+              />
+              <div className="relative z-10">
+                <div className="flex items-center gap-3">
+                  <div className="grid size-11 place-items-center rounded-xl bg-primary/10 text-primary">
+                    <FileCheck2 className="size-5" />
+                  </div>
+                  <div>
+                    <div className="font-display font-bold">Resolver agora</div>
+                    <div className="text-sm text-muted-foreground">
+                      Resposta no WhatsApp em minutos
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="mt-5 space-y-3">
-                {[
-                  { icon: Video, label: "Atendimento por videoconferência" },
-                  { icon: MapPin, label: "Atendimento presencial em Arcos/MG" },
-                  { icon: Handshake, label: "Parceiro da Contabilidade Lacerda Reis" },
-                  { icon: Clock, label: "Sem enrolação, direto ao ponto" },
-                ].map(({ icon: Icon, label }) => (
-                  <div key={label} className="flex items-center gap-3 rounded-lg bg-muted px-3 py-2.5">
-                    <Icon className="size-4 text-primary" />
-                    <span className="text-sm font-medium">{label}</span>
-                  </div>
-                ))}
-              </div>
+                <div className="mt-5 space-y-3">
+                  {[
+                    { icon: Video, label: "Atendimento por videoconferência" },
+                    { icon: MapPin, label: "Atendimento presencial em Arcos/MG" },
+                    { icon: Handshake, label: "Parceiro da Contabilidade Lacerda Reis" },
+                    { icon: Clock, label: "Sem enrolação, direto ao ponto" },
+                  ].map(({ icon: Icon, label }) => (
+                    <div key={label} className="flex items-center gap-3 rounded-lg bg-muted px-3 py-2.5">
+                      <Icon className="size-4 text-primary" />
+                      <span className="text-sm font-medium">{label}</span>
+                    </div>
+                  ))}
+                </div>
 
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-whatsapp mt-5 flex w-full items-center justify-center gap-2 rounded-xl px-5 py-3.5 font-semibold shadow-soft"
-              >
-                <MessageCircle className="size-5" /> Solicitar pelo WhatsApp
-              </a>
-              <p className="mt-3 text-center text-xs text-muted-foreground">
-                Atendimento real · Sem burocracia · Arcos/MG
-              </p>
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-whatsapp mt-5 flex w-full items-center justify-center gap-2 rounded-xl px-5 py-3.5 font-semibold shadow-soft"
+                >
+                  <MessageCircle className="size-5" /> Solicitar pelo WhatsApp
+                </a>
+                <p className="mt-3 text-center text-xs text-muted-foreground">
+                  Atendimento real · Sem burocracia · Arcos/MG
+                </p>
+              </div>
             </div>
           </div>
         </div>
