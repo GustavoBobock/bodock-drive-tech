@@ -17,6 +17,7 @@ import {
   Building2,
   ClipboardList,
   RefreshCw,
+  XCircle,
 } from "lucide-react";
 import {
   Table,
@@ -293,6 +294,58 @@ function Landing() {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      {/* COMPARATIVO */}
+      <section className="mx-auto max-w-5xl px-6 py-14 md:py-20">
+        <div className="text-center">
+          <h2 className="font-display text-3xl font-bold sm:text-4xl text-balance">
+            A diferença é simples.
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
+            Veja o que muda para quem roda com o certificado em dia.
+          </p>
+        </div>
+
+        <div className="mt-10 grid gap-5 sm:grid-cols-2">
+          <div className="rounded-2xl bg-destructive/5 p-6 ring-1 ring-destructive/15 sm:p-7">
+            <h3 className="font-display text-lg font-bold text-destructive">
+              Sem Certificado Digital
+            </h3>
+            <ul className="mt-5 space-y-3 text-sm">
+              {[
+                "MDF-e rejeitado automaticamente",
+                "CIOT não emitido",
+                "Frete perdido",
+                "Caminhão parado na fiscalização",
+                "Multa de até R$ 550 por viagem sem CIOT",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-2.5 font-medium text-foreground/80">
+                  <XCircle className="mt-0.5 size-4 shrink-0 text-destructive" /> {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="rounded-2xl bg-secondary/5 p-6 ring-1 ring-secondary/15 sm:p-7">
+            <h3 className="font-display text-lg font-bold text-secondary">
+              Com Certificado Digital
+            </h3>
+            <ul className="mt-5 space-y-3 text-sm">
+              {[
+                "Emite CIOT",
+                "Emite CT-e e MDF-e",
+                "Acessa Gov.br",
+                "Opera sem interrupção",
+                "Documentação em dia",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-2.5 font-medium text-foreground/80">
+                  <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-secondary" /> {item}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
