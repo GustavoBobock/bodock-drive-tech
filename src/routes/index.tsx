@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
-import Lottie from "lottie-react";
+import { useEffect, useRef, useState } from "react";
+import Lottie, { type LottieRefCurrentProps } from "lottie-react";
 import {
   Truck,
   Video,
@@ -149,8 +149,10 @@ function WhatsAppButton({
 }
 
 function Landing() {
+  const lottieRef = useRef<LottieRefCurrentProps>(null);
+
   return (
-    <div className="min-h-screen bg-background pb-20 md:pb-0">
+    <div className="min-h-screen bg-background pb-24 md:pb-0">
       {/* NAV */}
       <header className="absolute top-0 z-20 w-full">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
@@ -858,16 +860,18 @@ function Landing() {
           className="flex shrink-0 items-center"
         >
           <Lottie
+            lottieRef={lottieRef}
             animationData={truckAnimation}
             loop={true}
             autoplay={true}
-            style={{ height: 44, width: "auto" }}
+            style={{ height: 68, width: "auto" }}
+            onComplete={() => lottieRef.current?.goToAndPlay(0)}
           />
         </a>
       </div>
 
       {/* FLOATING CONTACT */}
-      <div className="fixed bottom-5 right-5 z-30 flex flex-col items-center gap-2.5 max-md:bottom-24">
+      <div className="fixed bottom-5 right-5 z-30 flex flex-col items-center gap-2.5 max-md:bottom-32">
         {/* Avatar com anel girando */}
         <a
           href={WHATSAPP_URL}
