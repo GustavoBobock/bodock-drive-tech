@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import Lottie from "lottie-react";
 import {
   Truck,
   Video,
@@ -38,6 +39,7 @@ import logoBodock from "@/assets/logo-tipo-bodock-png-semfundo.png";
 import logoLacerdaReis from "@/assets/logo-lacerdaresis-parceiro-semfundo.png";
 import logoV9 from "@/assets/logo-v9-parceiro.png";
 import gustavoContato from "@/assets/gustavo-contato.png";
+import truckAnimation from "@/assets/truck-animation.json";
 
 const WHATSAPP_URL =
   "https://wa.me/5537999591557?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20motorista.bodockplanet.tec.br%20e%20quero%20informa%C3%A7%C3%B5es%20sobre%20Certificado%20Digital.";
@@ -115,86 +117,6 @@ function RotatingPrice() {
     >
       {rotatingPrices[index]}
     </span>
-  );
-}
-
-function TruckWheel({ cx, cy, r }: { cx: number; cy: number; r: number }) {
-  const spokeAngles = [0, 60, 120];
-  return (
-    <g style={{ transformOrigin: `${cx}px ${cy}px`, animation: "spin 1.2s linear infinite" }}>
-      <circle cx={cx} cy={cy} r={r} fill="#1a1a1a" />
-      <circle cx={cx} cy={cy} r={r - 1.5} fill="none" stroke="#fff" strokeWidth="0.8" />
-      {spokeAngles.map((deg) => {
-        const rad = (deg * Math.PI) / 180;
-        const dx = Math.cos(rad) * (r - 1);
-        const dy = Math.sin(rad) * (r - 1);
-        return (
-          <line
-            key={deg}
-            x1={cx - dx}
-            y1={cy - dy}
-            x2={cx + dx}
-            y2={cy + dy}
-            stroke="#fff"
-            strokeWidth="0.8"
-          />
-        );
-      })}
-      <circle cx={cx} cy={cy} r={1.2} fill="#fff" />
-    </g>
-  );
-}
-
-function TruckIcon() {
-  return (
-    <svg
-      viewBox="0 0 140 44"
-      className="h-11 w-auto"
-      role="img"
-      aria-label="Caminhão Bodock Planet"
-    >
-      {/* Chassi */}
-      <rect x="2" y="32" width="130" height="2" fill="#1a1a1a" />
-
-      {/* Cabine */}
-      <path
-        d="M2 32 V16 Q2 12 6 12 H24 Q28 12 28 16 V32 Z"
-        fill="#2E7D32"
-        stroke="#fff"
-        strokeWidth="1.5"
-      />
-      <path d="M7 15 H23 Q25 15 25 18 V20 H7 Z" fill="#fff" />
-
-      {/* Carroceria */}
-      <rect x="28" y="6" width="104" height="26" rx="3" fill="#2E7D32" stroke="#fff" strokeWidth="1.5" />
-      <text
-        x="80"
-        y="19"
-        textAnchor="middle"
-        fontSize="7"
-        fontWeight="700"
-        fill="#fff"
-        fontFamily="var(--font-display)"
-      >
-        Bora voltar
-      </text>
-      <text
-        x="80"
-        y="27"
-        textAnchor="middle"
-        fontSize="7"
-        fontWeight="700"
-        fill="#fff"
-        fontFamily="var(--font-display)"
-      >
-        pra estrada!
-      </text>
-
-      {/* Rodas: 1 dianteira, 2 traseiras */}
-      <TruckWheel cx={14} cy={37} r={6} />
-      <TruckWheel cx={94} cy={37} r={6} />
-      <TruckWheel cx={116} cy={37} r={6} />
-    </svg>
   );
 }
 
@@ -935,7 +857,12 @@ function Landing() {
           aria-label="Falar com a Bodock Planet no WhatsApp"
           className="flex shrink-0 items-center"
         >
-          <TruckIcon />
+          <Lottie
+            animationData={truckAnimation}
+            loop={true}
+            autoplay={true}
+            style={{ height: 44, width: "auto" }}
+          />
         </a>
       </div>
 
