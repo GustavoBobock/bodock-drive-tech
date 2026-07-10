@@ -128,7 +128,7 @@ function WhatsAppButton({
   className = "",
 }: {
   children: React.ReactNode;
-  variant?: "primary" | "outline";
+  variant?: "primary" | "outline" | "glow";
   className?: string;
 }) {
   const base =
@@ -136,7 +136,9 @@ function WhatsAppButton({
   const styles =
     variant === "primary"
       ? "btn-whatsapp"
-      : "border-2 border-white/30 bg-white/10 text-white hover:bg-white/20 backdrop-blur";
+      : variant === "glow"
+        ? "glow-btn-green border-2 border-secondary bg-transparent text-white hover:bg-secondary/10"
+        : "border-2 border-white/30 bg-white/10 text-white hover:bg-white/20 backdrop-blur";
   return (
     <a
       href={WHATSAPP_URL}
@@ -208,8 +210,7 @@ function Landing() {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <WhatsAppButton>Quero meu Certificado</WhatsAppButton>
-              <WhatsAppButton variant="outline">Falar com Especialista</WhatsAppButton>
+              <WhatsAppButton variant="glow">Quero meu Certificado</WhatsAppButton>
             </div>
 
             <ul className="mt-8 grid grid-cols-2 gap-2 text-sm text-white/85 sm:max-w-md">
