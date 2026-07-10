@@ -191,7 +191,12 @@ function Landing() {
             <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 text-xs font-medium ring-1 ring-white/20 backdrop-blur">
               <MapPin className="size-3.5" /> Arcos / MG · Atendemos toda a região
             </div>
-            <h1 className="mt-6 font-display text-4xl font-extrabold leading-[1.15] text-balance sm:text-5xl md:text-6xl">
+            <div className="mt-5">
+              <span className="text-secondary-foreground bg-secondary/90 inline-block rounded-md px-3 py-1 font-display text-2xl font-extrabold sm:text-3xl">
+                Certificado Digital
+              </span>
+            </div>
+            <h1 className="mt-3 font-display text-4xl font-extrabold leading-[1.15] text-balance sm:text-5xl md:text-6xl">
               Quem move Arcos e região{" "}
               <span className="text-secondary-foreground bg-secondary/90 px-2 pb-1.5 rounded-md inline-block">
                 não pode parar.
