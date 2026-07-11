@@ -166,3 +166,10 @@
   50%       { box-shadow: 0 0 20px rgba(46, 125, 50, 0.9); }
 }
 
+/* ── Bottom bar avatar orbit dot ── */
+
+@keyframes orbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+

@@ -947,6 +947,15 @@ function Landing() {
               style={{ objectPosition: "center 12%" }}
             />
           </div>
+          <span
+            className="absolute inset-0 rounded-full"
+            style={{ animation: "orbit 3s linear infinite" }}
+          >
+            <span
+              className="absolute left-1/2 top-0 size-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#4ade80]"
+              style={{ boxShadow: "0 0 6px #4ade80" }}
+            />
+          </span>
           <span className="absolute bottom-0 right-0 grid size-3.5 place-items-center rounded-full border border-white bg-[#25D366]">
             <MessageCircle className="size-2 text-white" />
           </span>
