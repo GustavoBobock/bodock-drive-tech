@@ -913,17 +913,14 @@ function Landing() {
               <span>
                 © {new Date().getFullYear()} Bodock Planet Tecnologia. Todos os direitos reservados.
               </span>
-              <span>
-                Desenvolvido por BDK EngenharIA Digital ·{" "}
-                <a
-                  href={WHATSAPP_DEV_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-foreground transition-colors"
-                >
-                  Quer uma página como essa?
-                </a>
-              </span>
+              <a
+                href={WHATSAPP_DEV_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-foreground transition-colors"
+              >
+                Quer uma página como essa?
+              </a>
             </div>
           </div>
         </div>
