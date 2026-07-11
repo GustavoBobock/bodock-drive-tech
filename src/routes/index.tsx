@@ -315,18 +315,6 @@ function Landing() {
         </div>
       </section>
 
-      {/* VIDEO CARRETA */}
-      <section>
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          src={truckLoop}
-          className="h-[300px] w-full object-cover md:h-[450px]"
-        />
-      </section>
-
       {/* COMPARATIVO */}
       <section className="mx-auto max-w-5xl px-6 py-14 md:py-20">
         <div className="text-center">
@@ -486,43 +474,72 @@ function Landing() {
       </section>
 
       {/* CERTIFICADO */}
-      <section id="certificado" className="mx-auto max-w-3xl px-6 py-20 md:py-28 text-center">
-        <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1.5 text-xs font-semibold text-primary">
-          <ShieldCheck className="size-3.5" /> Certificado Digital
-        </div>
-        <h2 className="mt-4 font-display text-3xl font-bold sm:text-4xl text-balance">
-          Documento digital com a mesma validade da sua assinatura no papel.
-        </h2>
-        <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
-          Trabalhamos com Certificado Digital para <strong>Pessoa Física</strong> e{" "}
-          <strong>Pessoa Jurídica</strong>, nos modelos A1 e A3, com atendimento{" "}
-          <strong>presencial</strong> ou por <strong>videoconferência</strong> — você escolhe o
-          que é mais prático.
-        </p>
+      <section id="certificado" className="mx-auto max-w-7xl px-6 py-20 md:py-28">
+        <div className="grid gap-12 md:grid-cols-2 md:items-center">
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1.5 text-xs font-semibold text-primary">
+              <ShieldCheck className="size-3.5" /> Certificado Digital
+            </div>
+            <h2 className="mt-4 font-display text-3xl font-bold sm:text-4xl text-balance">
+              Documento digital com a mesma validade da sua assinatura no papel.
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              Trabalhamos com Certificado Digital para <strong>Pessoa Física</strong> e{" "}
+              <strong>Pessoa Jurídica</strong>, nos modelos A1 e A3, com atendimento{" "}
+              <strong>presencial</strong> ou por <strong>videoconferência</strong> — você escolhe o
+              que é mais prático.
+            </p>
 
-        <div className="mt-8 grid gap-4 text-left sm:grid-cols-2">
-          <CertCard title="Pessoa Física" items={["Modelo A1", "Modelo A3"]} />
-          <CertCard title="Pessoa Jurídica" items={["Modelo A1", "Modelo A3"]} />
-        </div>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              <CertCard title="Pessoa Física" items={["Modelo A1", "Modelo A3"]} />
+              <CertCard title="Pessoa Jurídica" items={["Modelo A1", "Modelo A3"]} />
+            </div>
 
-        <div className="mt-6 flex flex-wrap justify-center gap-3">
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-medium">
-            <MapPin className="size-4 text-primary" /> Presencial
+            <div className="mt-6 flex flex-wrap gap-3">
+              <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-medium">
+                <MapPin className="size-4 text-primary" /> Presencial
+              </div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-medium">
+                <Video className="size-4 text-primary" /> Videoconferência
+              </div>
+            </div>
+
+            <div className="mt-8">
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-whatsapp inline-flex items-center gap-2 rounded-full px-6 py-3.5 font-semibold shadow-soft"
+              >
+                <MessageCircle className="size-5" /> Solicitar Certificado
+              </a>
+            </div>
           </div>
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-medium">
-            <Video className="size-4 text-primary" /> Videoconferência
-          </div>
-        </div>
 
-        <div className="mt-8">
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-whatsapp inline-flex items-center gap-2 rounded-full px-6 py-3.5 font-semibold shadow-soft"
-          >
-            <MessageCircle className="size-5" /> Solicitar Certificado
-          </a>
+          <div className="relative">
+            <div className="absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-br from-primary/15 to-secondary/15 blur-2xl" />
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              src={truckLoop}
+              width={1536}
+              height={768}
+              className="rounded-2xl object-cover shadow-elevated ring-1 ring-black/5"
+            />
+            <div className="absolute -bottom-6 -left-6 hidden rounded-2xl bg-card p-4 shadow-elevated ring-1 ring-black/5 sm:block">
+              <div className="flex items-center gap-3">
+                <Truck className="size-6 text-secondary" />
+                <div>
+                  <div className="font-display font-bold">Quem está na estrada</div>
+                  <div className="text-xs text-muted-foreground">
+                    não pode esperar dias por um certificado
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
