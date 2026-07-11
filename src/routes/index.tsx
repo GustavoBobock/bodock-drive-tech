@@ -35,7 +35,7 @@ import {
 } from "@/components/ui/accordion";
 import heroTrucker from "@/assets/hero-trucker.jpg";
 import elementoCertdigBdk from "@/assets/elemento-certdig-bdk.png";
-import trucksFleet from "@/assets/trucks-fleet.jpg";
+import truckLoop from "@/assets/carretas-bitrem-v2.mp4";
 import logoBodock from "@/assets/logo-tipo-bodock-png-semfundo.png";
 import logoLacerdaReis from "@/assets/logo-lacerdaresis-parceiro-semfundo.png";
 import logoV9 from "@/assets/logo-v9-parceiro.png";
@@ -518,10 +518,12 @@ function Landing() {
 
           <div className="relative">
             <div className="absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-br from-primary/15 to-secondary/15 blur-2xl" />
-            <img
-              src={trucksFleet}
-              alt="Frota de caminhões bitruck e carretas em pedreira de Arcos/MG"
-              loading="lazy"
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              src={truckLoop}
               width={1536}
               height={768}
               className="rounded-2xl object-cover shadow-elevated ring-1 ring-black/5"
