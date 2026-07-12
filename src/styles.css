@@ -173,3 +173,37 @@
   to { transform: rotate(360deg); }
 }
 
+/* ── Hero dust particles ── */
+
+.hero-dust {
+  position: absolute;
+  inset: 0;
+  z-index: -5;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.dust-particle {
+  position: absolute;
+  border-radius: 50%;
+  background-color: white;
+  pointer-events: none;
+  animation-name: dust-float;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes dust-float {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: var(--dust-opacity, 0.2);
+  }
+  100% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+}
+

@@ -189,6 +189,35 @@ function Landing() {
         <div className="absolute inset-0 -z-10 gradient-hero opacity-80" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
 
+        <div className="hero-dust" aria-hidden="true">
+          {[
+            { top: "15%", left: "8%", size: 3, duration: 6, delay: 0, opacity: 0.25 },
+            { top: "70%", left: "20%", size: 4, duration: 7.5, delay: 1.2, opacity: 0.15 },
+            { top: "35%", left: "35%", size: 2, duration: 5, delay: 2.5, opacity: 0.3 },
+            { top: "80%", left: "45%", size: 5, duration: 8, delay: 0.8, opacity: 0.1 },
+            { top: "10%", left: "55%", size: 3, duration: 4.5, delay: 3, opacity: 0.2 },
+            { top: "55%", left: "65%", size: 6, duration: 7, delay: 1.6, opacity: 0.15 },
+            { top: "25%", left: "75%", size: 2, duration: 5.5, delay: 4, opacity: 0.3 },
+            { top: "65%", left: "85%", size: 4, duration: 6.5, delay: 2, opacity: 0.2 },
+            { top: "45%", left: "12%", size: 3, duration: 8, delay: 3.5, opacity: 0.1 },
+            { top: "90%", left: "60%", size: 5, duration: 4, delay: 0.4, opacity: 0.25 },
+          ].map((p, i) => (
+            <span
+              key={i}
+              className="dust-particle"
+              style={{
+                top: p.top,
+                left: p.left,
+                width: `${p.size}px`,
+                height: `${p.size}px`,
+                animationDuration: `${p.duration}s`,
+                animationDelay: `${p.delay}s`,
+                ["--dust-opacity" as string]: p.opacity,
+              }}
+            />
+          ))}
+        </div>
+
         <div className="mx-auto grid max-w-7xl gap-10 px-6 pt-32 pb-24 md:grid-cols-2 md:pt-40 md:pb-32">
           <div className="text-white">
             <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 text-xs font-medium ring-1 ring-white/20 backdrop-blur">
