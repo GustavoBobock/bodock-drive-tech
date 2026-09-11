@@ -90,10 +90,8 @@ export const Route = createFileRoute("/")({
 });
 
 const rotatingPrices = [
-  "A1 PF Presencial — R$ 100",
-  "A1 PF Vídeo — R$ 128",
-  "CNPJ Presencial — R$ 158",
-  "A1 CNPJ Vídeo — R$ 178",
+  "e-CPF (PF) — R$ 128",
+  "e-CNPJ (PJ) — R$ 176",
 ];
 
 function RotatingPrice() {
@@ -1067,7 +1065,7 @@ const faqs = [
   },
   {
     q: "Quanto custa?",
-    a: "O Certificado A1 começa em R$ 100,00 para Pessoa Física presencial. Por videoconferência a partir de R$ 128,00. Para empresa (CNPJ) a partir de R$ 158,00 presencial ou R$ 178,00 por videoconferência. Validade de 1 ano.",
+    a: "O e-CPF (Pessoa Física) custa R$ 128,00 e o e-CNPJ (Pessoa Jurídica) custa R$ 176,00. O valor é o mesmo para atendimento presencial ou por videoconferência. Validade de 1 ano.",
   },
   {
     q: "O certificado serve para CT-e e MDF-e?",
@@ -1094,10 +1092,8 @@ const faqSchema = {
 
 
 const pricingPlans = [
-  { type: "e-CPF (Pessoa Física)", mode: "Presencial", validity: "1 ano", price: "R$ 100" },
-  { type: "e-CPF (Pessoa Física)", mode: "Videoconferência", validity: "1 ano", price: "R$ 128" },
-  { type: "e-CNPJ (Pessoa Jurídica)", mode: "Presencial", validity: "1 ano", price: "R$ 158" },
-  { type: "e-CNPJ (Pessoa Jurídica)", mode: "Videoconferência", validity: "1 ano", price: "R$ 178" },
+  { type: "e-CPF (Pessoa Física)", mode: "Presencial ou Videoconferência", validity: "1 ano", price: "R$ 128" },
+  { type: "e-CNPJ (Pessoa Jurídica)", mode: "Presencial ou Videoconferência", validity: "1 ano", price: "R$ 176" },
 ];
 
 const documentChecklists = [
