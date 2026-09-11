@@ -512,14 +512,14 @@ function Landing() {
             </h2>
             <p className="mt-4 text-muted-foreground">
               Trabalhamos com Certificado Digital para <strong>Pessoa Física</strong> e{" "}
-              <strong>Pessoa Jurídica</strong>, nos modelos A1 e A3, com atendimento{" "}
+              <strong>Pessoa Jurídica</strong>, no modelo A1, com atendimento{" "}
               <strong>presencial</strong> ou por <strong>videoconferência</strong> — você escolhe o
               que é mais prático.
             </p>
 
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              <CertCard title="Pessoa Física" items={["Modelo A1", "Modelo A3"]} />
-              <CertCard title="Pessoa Jurídica" items={["Modelo A1", "Modelo A3"]} />
+              <CertCard title="Pessoa Física" items={["Modelo A1"]} />
+              <CertCard title="Pessoa Jurídica" items={["Modelo A1"]} />
             </div>
 
             <div className="mt-6 flex flex-wrap gap-3">
@@ -861,9 +861,8 @@ function Landing() {
                   </div>
                 </div>
               </div>
-              <div className="mt-3 space-y-0.5 text-xs text-muted-foreground">
-                <div>Av. Governador Valadares, nº 171, sala 03 — Galeria Arcos Shopping, Centro · Arcos/MG</div>
-                <div>CNPJ: 43.834.782/0001-77</div>
+              <div className="mt-3 text-xs text-muted-foreground">
+                CNPJ: 43.834.782/0001-77 · Arcos/MG
               </div>
             </div>
 
