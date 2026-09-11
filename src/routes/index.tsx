@@ -223,7 +223,7 @@ function Landing() {
             </div>
             <div className="mt-5">
               <span className="text-secondary-foreground bg-secondary/90 inline-block rounded-md px-3 py-1 font-display text-2xl font-extrabold sm:text-3xl">
-                Certificado Digital
+                Certificado Digital A1
               </span>
             </div>
             <h1 className="mt-3 font-display text-4xl font-extrabold leading-[1.15] text-balance sm:text-5xl md:text-6xl">
@@ -609,11 +609,6 @@ function Landing() {
               </TableBody>
             </Table>
           </div>
-
-          <p className="mt-6 text-center text-sm text-muted-foreground">
-            Trabalhamos também com Certificado A3 (validade de até 3 anos) — consulte valores e
-            disponibilidade pelo WhatsApp.
-          </p>
 
           <div className="mt-8 flex justify-center">
             <a
