@@ -92,6 +92,7 @@ export const Route = createFileRoute("/")({
 const rotatingPrices = [
   "e-CPF (PF) — R$ 138",
   "e-CNPJ (PJ) — R$ 189",
+  "Combo e-CPF + e-CNPJ — R$ 299",
 ];
 
 function RotatingPrice() {
@@ -590,18 +591,33 @@ function Landing() {
               <TableHeader>
                 <TableRow>
                   <TableHead>Tipo</TableHead>
-                  <TableHead>Atendimento</TableHead>
-                  <TableHead>Validade</TableHead>
+                  <TableHead className="hidden sm:table-cell">Atendimento</TableHead>
+                  <TableHead className="hidden sm:table-cell">Validade</TableHead>
                   <TableHead className="text-right">Valor</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {pricingPlans.map((p) => (
-                  <TableRow key={`${p.type}-${p.mode}`}>
-                    <TableCell className="font-medium">{p.type}</TableCell>
-                    <TableCell className="text-muted-foreground">{p.mode}</TableCell>
-                    <TableCell className="text-muted-foreground">{p.validity}</TableCell>
-                    <TableCell className="text-right font-display font-bold text-primary">
+                  <TableRow
+                    key={`${p.type}-${p.mode}`}
+                    className={p.destaque ? "bg-secondary/10 hover:bg-secondary/15" : undefined}
+                  >
+                    <TableCell className="whitespace-normal font-medium">
+                      <div className="flex flex-wrap items-center gap-2">
+                        {p.type}
+                        {p.destaque && (
+                          <span className="rounded-full bg-secondary px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-secondary-foreground">
+                            Mais vantajoso
+                          </span>
+                        )}
+                      </div>
+                      {p.nota && (
+                        <div className="mt-1 text-xs font-semibold text-secondary">{p.nota}</div>
+                      )}
+                    </TableCell>
+                    <TableCell className="hidden text-muted-foreground sm:table-cell">{p.mode}</TableCell>
+                    <TableCell className="hidden text-muted-foreground sm:table-cell">{p.validity}</TableCell>
+                    <TableCell className="whitespace-nowrap text-right font-display font-bold text-primary">
                       {p.price}
                     </TableCell>
                   </TableRow>
@@ -1059,7 +1075,7 @@ const faqs = [
   },
   {
     q: "Quanto custa?",
-    a: "O e-CPF (Pessoa Física) custa R$ 138,00 e o e-CNPJ (Pessoa Jurídica) custa R$ 189,00. O valor é o mesmo para atendimento presencial ou por videoconferência. Validade de 1 ano.",
+    a: "O e-CPF (Pessoa Física) custa R$ 138,00 e o e-CNPJ (Pessoa Jurídica) custa R$ 189,00. Quem precisa dos dois pode levar o Combo e-CPF + e-CNPJ por R$ 299,00 (economia de R$ 28). O valor é o mesmo para atendimento presencial ou por videoconferência. Validade de 1 ano.",
   },
   {
     q: "O certificado serve para CT-e e MDF-e?",
@@ -1088,6 +1104,14 @@ const faqSchema = {
 const pricingPlans = [
   { type: "e-CPF (Pessoa Física)", mode: "Presencial ou Videoconferência", validity: "1 ano", price: "R$ 138" },
   { type: "e-CNPJ (Pessoa Jurídica)", mode: "Presencial ou Videoconferência", validity: "1 ano", price: "R$ 189" },
+  {
+    type: "Combo e-CPF + e-CNPJ",
+    mode: "Presencial ou Videoconferência",
+    validity: "1 ano",
+    price: "R$ 299",
+    destaque: true,
+    nota: "Economize R$ 28 · ideal para quem tem ou vai abrir empresa",
+  },
 ];
 
 const documentChecklists = [
