@@ -90,8 +90,8 @@ export const Route = createFileRoute("/")({
 });
 
 const rotatingPrices = [
-  "e-CPF (PF) — R$ 128",
-  "e-CNPJ (PJ) — R$ 176",
+  "e-CPF (PF) — R$ 138",
+  "e-CNPJ (PJ) — R$ 189",
 ];
 
 function RotatingPrice() {
@@ -1059,7 +1059,7 @@ const faqs = [
   },
   {
     q: "Quanto custa?",
-    a: "O e-CPF (Pessoa Física) custa R$ 128,00 e o e-CNPJ (Pessoa Jurídica) custa R$ 176,00. O valor é o mesmo para atendimento presencial ou por videoconferência. Validade de 1 ano.",
+    a: "O e-CPF (Pessoa Física) custa R$ 138,00 e o e-CNPJ (Pessoa Jurídica) custa R$ 189,00. O valor é o mesmo para atendimento presencial ou por videoconferência. Validade de 1 ano.",
   },
   {
     q: "O certificado serve para CT-e e MDF-e?",
@@ -1086,8 +1086,8 @@ const faqSchema = {
 
 
 const pricingPlans = [
-  { type: "e-CPF (Pessoa Física)", mode: "Presencial ou Videoconferência", validity: "1 ano", price: "R$ 128" },
-  { type: "e-CNPJ (Pessoa Jurídica)", mode: "Presencial ou Videoconferência", validity: "1 ano", price: "R$ 176" },
+  { type: "e-CPF (Pessoa Física)", mode: "Presencial ou Videoconferência", validity: "1 ano", price: "R$ 138" },
+  { type: "e-CNPJ (Pessoa Jurídica)", mode: "Presencial ou Videoconferência", validity: "1 ano", price: "R$ 189" },
 ];
 
 const documentChecklists = [
