@@ -66,7 +66,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Emita seu Certificado Digital para CIOT, CT-e, MEI e Transportadores. Atendimento por videoconferência ou presencial em Arcos/MG.",
+          "Emita seu Certificado Digital para CIOT, CT-e, MEI e Transportadores. Atendimento por videoconferência ou presencial com agendamento.",
       },
       { property: "og:site_name", content: "Bodock Planet Tecnologia" },
       { property: "og:url", content: "https://motorista.bodockplanet.tec.br" },
@@ -74,14 +74,14 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Emita seu Certificado Digital para CIOT, CT-e, MEI e Transportadores. Atendimento por videoconferência ou presencial em Arcos/MG.",
+          "Emita seu Certificado Digital para CIOT, CT-e, MEI e Transportadores. Atendimento por videoconferência ou presencial com agendamento.",
       },
       { property: "og:image", content: heroTrucker },
       { name: "twitter:title", content: "Certificado Digital para Motorista, CIOT e CT-e | Bodock Planet" },
       {
         name: "twitter:description",
         content:
-          "Emita seu Certificado Digital para CIOT, CT-e, MEI e Transportadores. Atendimento por videoconferência ou presencial em Arcos/MG.",
+          "Emita seu Certificado Digital para CIOT, CT-e, MEI e Transportadores. Atendimento por videoconferência ou presencial com agendamento.",
       },
       { name: "twitter:image", content: heroTrucker },
     ],
@@ -90,9 +90,9 @@ export const Route = createFileRoute("/")({
 });
 
 const rotatingPrices = [
-  "e-CPF (PF) — R$ 138",
-  "e-CNPJ (PJ) — R$ 189",
-  "Combo e-CPF + e-CNPJ — R$ 299",
+  "e-CPF (PF) — R$ 129",
+  "e-CNPJ (PJ) — R$ 179",
+  "Combo e-CPF + e-CNPJ — R$ 289",
 ];
 
 function RotatingPrice() {
@@ -281,7 +281,7 @@ function Landing() {
                 <div className="mt-5 space-y-3">
                   {[
                     { icon: Video, label: "Atendimento por videoconferência" },
-                    { icon: MapPin, label: "Atendimento presencial em Arcos/MG" },
+                    { icon: MapPin, label: "Atendimento presencial com agendamento" },
                     { icon: Handshake, label: "Parceiro da Contabilidade Lacerda Reis" },
                     { icon: Clock, label: "Sem enrolação, direto ao ponto" },
                   ].map(({ icon: Icon, label }) => (
@@ -318,7 +318,7 @@ function Landing() {
             </h2>
             <p className="mt-3 text-muted-foreground">
               O Certificado Digital resolve tudo de uma vez. Emitimos rapidamente por
-              videoconferência ou presencial em Arcos/MG.
+              videoconferência ou presencial com agendamento.
             </p>
 
             <div className="mt-6">
@@ -701,7 +701,7 @@ function Landing() {
             </div>
           </div>
           <h3 className="mt-4 font-display text-lg font-bold">Gustavo Lamounier</h3>
-          <p className="text-sm text-muted-foreground">Agente de Registro Autorizado</p>
+          <p className="text-sm text-muted-foreground">Atendimento e orientação</p>
 
           <div className="mt-3 flex items-center gap-2 rounded-full bg-muted px-3 py-1.5 ring-1 ring-border">
             <img src={logoV9} alt="V9 Soluções Tecnológicas" className="h-4 w-auto object-contain" />
@@ -709,7 +709,7 @@ function Landing() {
           </div>
 
           <p className="mt-5 max-w-sm text-sm text-muted-foreground">
-            Atendimento presencial em Arcos/MG e por videoconferência para todo o Brasil.
+            Emissão realizada pela parceira V9 Soluções Tecnológicas — presencial com agendamento ou por videoconferência para todo o Brasil.
           </p>
         </div>
       </section>
@@ -1075,7 +1075,7 @@ const faqs = [
   },
   {
     q: "Quanto custa?",
-    a: "O e-CPF (Pessoa Física) custa R$ 138,00 e o e-CNPJ (Pessoa Jurídica) custa R$ 189,00. Quem precisa dos dois pode levar o Combo e-CPF + e-CNPJ por R$ 299,00 (economia de R$ 28). O valor é o mesmo para atendimento presencial ou por videoconferência. Validade de 1 ano.",
+    a: "O e-CPF (Pessoa Física) custa R$ 129,00 e o e-CNPJ (Pessoa Jurídica) custa R$ 179,00. Quem precisa dos dois pode levar o Combo e-CPF + e-CNPJ por R$ 289,00 (economia de R$ 19). O valor é o mesmo para atendimento presencial ou por videoconferência. Validade de 1 ano.",
   },
   {
     q: "O certificado serve para CT-e e MDF-e?",
@@ -1102,15 +1102,15 @@ const faqSchema = {
 
 
 const pricingPlans = [
-  { type: "e-CPF (Pessoa Física)", mode: "Presencial ou Videoconferência", validity: "1 ano", price: "R$ 138" },
-  { type: "e-CNPJ (Pessoa Jurídica)", mode: "Presencial ou Videoconferência", validity: "1 ano", price: "R$ 189" },
+  { type: "e-CPF (Pessoa Física)", mode: "Presencial ou Videoconferência", validity: "1 ano", price: "R$ 129" },
+  { type: "e-CNPJ (Pessoa Jurídica)", mode: "Presencial ou Videoconferência", validity: "1 ano", price: "R$ 179" },
   {
     type: "Combo e-CPF + e-CNPJ",
     mode: "Presencial ou Videoconferência",
     validity: "1 ano",
-    price: "R$ 299",
+    price: "R$ 289",
     destaque: true,
-    nota: "Economize R$ 28 · ideal para quem tem ou vai abrir empresa",
+    nota: "Economize R$ 19 · ideal para quem tem ou vai abrir empresa",
   },
 ];
 
